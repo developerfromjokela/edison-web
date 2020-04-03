@@ -6,4 +6,5 @@
 
 // TODO include a folder name if necessary (i.e. /edisonweb/)
 define("BASEURL", "/");
-
+define("TITLE", "Edison");
+require __DIR__ . "/dependencies.php";

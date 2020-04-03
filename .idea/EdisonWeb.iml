@@ -2,6 +2,8 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/js/pbf/raw" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
@@ -23,5 +25,13 @@
     <orderEntry type="library" name="docs" level="application" />
     <orderEntry type="library" name="Bundled Protobuf Distribution" level="application" />
     <orderEntry type="library" name="angular-translate" level="application" />
+    <orderEntry type="library" name="svg-assets-cache" level="application" />
+    <orderEntry type="library" name="moment" level="application" />
+    <orderEntry type="library" name="angular-translate" level="application" />
+    <orderEntry type="library" name="angular-messages" level="application" />
+    <orderEntry type="library" name="angular-aria" level="application" />
+    <orderEntry type="library" name="angular-route" level="application" />
+    <orderEntry type="library" name="angular-animate" level="application" />
+    <orderEntry type="library" name="angular" level="application" />
   </component>
 </module>

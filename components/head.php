@@ -1,24 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Edison Desktop</title>
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular">
-    <link rel="stylesheet" href="/css/edison_web.css"/>
-    <link rel="stylesheet" href="https://gitcdn.xyz/cdn/angular/bower-material/v1.1.21/angular-material.css"/>
-    <link rel="stylesheet" href="https://material.angularjs.org/1.1.21/docs.css"/>
-
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet">
-    <base href="/">
-
+    <title><?php echo TITLE; ?></title>
+    <base href="<?php echo BASEURL ?>">
     <script>
         var baseURL = "<?php echo substr(BASEURL, 0, -1)?>";
     </script>
-    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+
+    <?php
+    setDependencies(HEAD_DEPENDENCIES);
+    ?>
 </head>
 <body>
-<!--
-Copyright 2020 Wilma Plus
-Developed by @developerfromjokela
--->
