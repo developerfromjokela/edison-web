@@ -1,4 +1,4 @@
-# edison-web
+# Edison Web
 Material Web Client for Edison Desktop
 
 This is the next gen Edison Desktop, I promise you'll see one of these on the offical website some day
