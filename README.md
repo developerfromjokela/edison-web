@@ -7,7 +7,7 @@ Features included:
 - Viewing pages
 - Viewing cards
 - Logging in via a session cookie
-- Offline saving into the browser, so if downtimes occur, you can still view your desktop
+- Offline data saved into the browser, so if downtimes occur, you can still view your desktop
 
 Features missing:
 - Cards adding, sharing, editing, attaching and deleting
