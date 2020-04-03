@@ -1,11 +1,19 @@
-
 /*
  * Copyright (c) 2020 EdisonWeb.
  * @author Developer From Jokela
  */
 
+var version = "1.0-alpha";
+var debug = false;
+
+
 function lowercase(string) {
     return (typeof string === 'string') ? string.toLowerCase() : string;
+}
+
+function log(message) {
+    if (debug)
+        console.log(message);
 }
 
 function get_request(url, $http, $translate, $mdDialog, callback, errCallback = undefined) {
@@ -45,7 +53,7 @@ function progressDialog($mdDialog, title, message, locked = false) {
             'title': title,
             'desc': message
         },
-        templateUrl: baseURL + '/templates/progress_dialog.html',
+        templateUrl: 'progress_dialog.html',
         parent: angular.element(document.body),
         clickOutsideToClose: !locked,
     });
@@ -67,7 +75,7 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
 
         $translateProvider.translations('en',en_lang);
 
-        $translateProvider.preferredLanguage('en');
+        $translateProvider.preferredLanguage(getData(dataEntries.language) || 'fi');
 
         $mdThemingProvider.definePalette('edisonDefault', {
             '50': 'e9e9e9',
@@ -162,20 +170,20 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
         $mdThemingProvider.theme('default').primaryPalette('edisonDefault').accentPalette('edisonAccent');
         $mdThemingProvider.theme('login').primaryPalette('edisonLoginTheme').dark();
         $mdThemingProvider.theme('login_progress').primaryPalette('edisonLoginProgressbarTheme').dark();
-
+        $mdThemingProvider.alwaysWatchTheme(true);
         $provide.value('$mdThemingProvider', $mdThemingProvider);
         $routeProvider
             .when("/", {
-                templateUrl : "templates/main.html",
+                templateUrl: baseURL + "templates/main.html",
                 "controller": "main"
             })
             .when("/login", {
-                templateUrl : "/templates/login.html",
+                templateUrl: baseURL + "templates/login.html",
                 controller: "login"
             })
 
             .when("/home", {
-                templateUrl : "/templates/client.html",
+                templateUrl: baseURL + "templates/client.html",
                 controller: "client"
             });
     })
@@ -184,34 +192,41 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
     }).controller('login',  function ($scope, $mdThemingProvider, $mdDialog, $http, $location, $translate) {
     $mdThemingProvider.setDefaultTheme('login');
     checkSession($location, false);
+    $scope.baseURL = baseURL;
     function validateSession(session) {
         $mdDialog.show({
             controller: SessionCheckController,
             locals: {
                 'session': session,
                 'callback': function (csrf) {
-                    console.log(csrf);
+                    log(csrf);
                     saveData(dataEntries.authentication, JSON.stringify(generateAuthenticationJSON(session, csrf['csrf'], csrf['id'])));
                     saveData(dataEntries.loggedin, true);
                     checkSession($location, false);
                 }
             },
-            templateUrl: baseURL+'/templates/session_validate.html',
+            templateUrl: baseURL + 'templates/session_validate.html',
             parent: angular.element(document.body),
-            clickOutsideToClose:false,
+            clickOutsideToClose: false,
         });
     }
     var options = [
         {icon: 'smartphone', src: '', title: 'login_phone', onclick: function () {
-                $mdDialog.show({
-                    controller: DialogController,
-                    templateUrl: baseURL+'/templates/edison_login.html',
-                    parent: angular.element(document.body),
-                    clickOutsideToClose:true,
-                })
-                    .then(function(answer) {
-                    }, function() {
+                if (!debug) {
+                    $mdDialog.show($mdDialog.alert()
+                        .title($translate.instant("not_implemented_yet"))
+                        .textContent($translate.instant("not_implemented_yet_msg"))
+                        .ok($translate.instant("ok")));
+                } else {
+                    $mdDialog.show({
+                        controller: DialogController,
+                        templateUrl: baseURL + 'templates/edison_login.html',
+                        parent: angular.element(document.body),
+                        clickOutsideToClose: true,
+                    }).then(function (answer) {
+
                     });
+                }
             }},
         {icon: 'vpn_key', src: '', title: 'login_session', onclick: function () {
                 var confirm = $mdDialog.prompt()
@@ -299,18 +314,31 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
     $scope.cardsLoaded = false;
     $scope.offlineMode = false;
     var cardMap = new Map();
-    $scope.getCard = function(cardId) {
+    $scope.getCard = function (cardId) {
         return cardMap.get(cardId)
     };
-    $scope.getThumbnail = function(cardId) {
+    $scope.getThumbnail = function (cardId) {
         var card = cardMap.get(cardId);
         if (card.thumbnail === undefined)
             return "https://app.edison.fi/static/dreamcards/img/bookmark.png";
         else
-            return "https://app.edison.fi"+card.thumbnail;
+            return "https://app.edison.fi" + card.thumbnail;
+    };
+    $scope.openAbout = function () {
+        $mdDialog.show({
+            templateUrl: baseURL + 'templates/edison_about.html',
+            controller: function ($scope) {
+                $scope.version = version;
+                $scope.year = serverYear;
+                $scope.baseURL = baseURL;
+                $scope.window = window;
+            },
+            parent: angular.element(document.body),
+            clickOutsideToClose: true,
+        });
     };
     $scope.edisonColorToCode = edisonColorToCode;
-    $scope.logout = function() {
+    $scope.logout = function () {
         clearAuthentication();
         checkSession($location, false);
     };
@@ -320,7 +348,7 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
     $scope.cards = [];
     offlineData.then(function (item) {
         if (item != null) {
-            console.log(item.data);
+            log(item.data);
             var data = item.data;
             $scope.pages = data.pages;
             $scope.cards = data.cards;
@@ -334,7 +362,7 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
     });
 
     $scope.openCard = function (card) {
-        console.log(card);
+        log(card);
         card = $scope.getCard(card);
         var cardURL = card.url;
         if (cardURL.includes("/sso/wilma/login")) {

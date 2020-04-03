@@ -1,0 +1,37 @@
+<!--
+  ~ Copyright (c) 2020 EdisonWeb.
+  ~ @author Developer From Jokela
+  -->
+
+<md-dialog aria-describedby="dialogContent_4" aria-label="appsid" class="_md md-transition-in"
+           ng-class="dialog.css" role="dialog" style="" tabindex="-1">
+    <md-dialog-content class="md-dialog-content" id="dialogContent_4" role="document" tabindex="-1">
+        <h2 class="md-title ng-binding">{{ 'about' | translate }}</h2>
+        <!-- ngIf: ::dialog.mdHtmlContent -->
+        <!-- ngIf: ::!dialog.mdHtmlContent -->
+        <div class="md-dialog-content-body ng-scope" style="">
+            <div layout="column" layout-align="center center">
+                <img height="80px" src="/images/edison_dark.svg" style="margin: 7px;"/>
+                <div layout="column" layout-align="center center" style="margin-bottom: 5px">
+                    <h2 style="margin: 1px;">{{'app_name' | translate}}</h2>
+                    <h3 style="margin-top: 6px;">v{{version}}</h3>
+                    <span style="margin-top: 4px;">Copyright &copy; {{year}} {{'creator_creds' | translate}}</span>
+                    <div class="row" style="margin-top: 13px;">
+                        <a href="https://github.com/developerfromjokela/edison-web" target="_blank"><img height="30px"
+                                                                                                         src="{{baseURL}}images/github-icon.svg"></a>
+                        <a href="https://developerfromjokela.com" target="_blank"><img
+                                src="{{baseURL}}images/dfj-logo.svg" style="margin-top: 6px; height: 30px;"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end ngIf: ::!dialog.mdHtmlContent -->
+    </md-dialog-content>
+    <md-dialog-actions>
+        <md-button ng-click="window.open('mailto:info@developerfromjokela.com')">{{'email_dev' | translate}}</md-button>
+        <md-button ng-click="window.open('https://github.com/developerfromjokela/edison-web/issues')">{{'report_issue' |
+            translate}}
+        </md-button>
+
+    </md-dialog-actions>
+</md-dialog>

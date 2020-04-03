@@ -4,8 +4,9 @@
     <title><?php echo TITLE; ?></title>
     <base href="<?php echo BASEURL ?>">
     <script>
-        var baseURL = "<?php echo substr(BASEURL, 0, -1)?>";
+        var baseURL = "<?php echo BASEURL?>";
         var edisonURL = "<?php echo EDISON_BASEPATH ?>";
+        var serverYear = "<?php echo date("Y")?>";
     </script>
 
     <?php

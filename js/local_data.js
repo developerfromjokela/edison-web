@@ -32,6 +32,5 @@ function getOfflineDatabase() {
 }
 
 function isLoggedIn() {
-    console.log(getData(dataEntries.loggedin));
     return (getData(dataEntries.loggedin) === 'true');
 }

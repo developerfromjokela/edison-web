@@ -4,6 +4,7 @@
  */
 
 var fi_lang = {
+    "app_name": "Edison Web",
     "welcome": "Tervetuloa Edisoniin!",
     "login_msg": "Kirjaudu sisään jatkaksesi",
     "login_edison": "Kirjaudu Edisonin kautta",
@@ -23,7 +24,10 @@ var fi_lang = {
     "all_cards": "Kaikki kortit",
     "logout": "Kirjaudu ulos",
     "about": "Tietoja tästä sovelluksesta",
-    "logging_wilma": "Kirjaudutaan Wilmaan"
-
-
+    "logging_wilma": "Kirjaudutaan Wilmaan",
+    "creator_creds": "Developer From Jokela",
+    "email_dev": "Lähetä sähköpostia kehittäjälle",
+    "report_issue": "Ilmoita ongelmasta",
+    "not_implemented_yet": "Ei vielä valmis",
+    "not_implemented_yet_msg": "Tämä ominaisuus tai toiminto on toistaiseksi työstön alla"
 };

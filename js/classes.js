@@ -7,9 +7,17 @@ class DataEntries {
     constructor() {
         this._loggedin = "login_state";
         this._authentication = "authentication";
-        this._offlineDesktop = "offine_desktop";
+        this._language = "language"
     }
 
+
+    get language() {
+        return this._language;
+    }
+
+    set language(value) {
+        this._language = value;
+    }
 
     get authentication() {
         return this._authentication;

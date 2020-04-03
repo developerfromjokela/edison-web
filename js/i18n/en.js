@@ -4,6 +4,7 @@
  */
 
 var en_lang = {
+    "app_name": "Edison Web",
     "welcome": "Welcome to Edison!",
     "login_msg": "Sign in to continue",
     "login_edison": "Sign in via Edison",
@@ -23,5 +24,10 @@ var en_lang = {
     "all_cards": "All cards",
     "logout": "Sign out",
     "about": "About this app",
-    "logging_wilma": "Signing in to wilma"
+    "logging_wilma": "Signing in to wilma",
+    "creator_creds": "Developer From Jokela",
+    "email_dev": "Email to the developer",
+    "report_issue": "Report an issue",
+    "not_implemented_yet": "Not implemented yet",
+    "not_implemented_yet_msg": "This feature or functionality is not ready yet"
 };

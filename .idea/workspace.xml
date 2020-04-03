@@ -2,18 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c47f6834-4708-46d7-a79b-a44ae8d1482e" name="Default Changelist" comment="Added the dependencies.php for controlling JS and CSS dependencies">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/progress_dialog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/dfj-logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/edison_dark.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/github-icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/edison_about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/v1/desktop/wilma/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/desktop/wilma/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/head.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edison_httplib/edison_api.php" beforeDir="false" afterPath="$PROJECT_DIR$/edison_httplib/edison_api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qrcode.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/classes.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/classes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/i18n/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/i18n/en.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/i18n/fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/i18n/fi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/local_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/local_data.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/client.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/session_validate.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/session_validate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/progress_dialog.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +56,7 @@
       <server host="127.0.0.1" id="4f8d84cd-8c2f-4b4d-80c1-f3a418469b10" name="Unnamed" />
     </servers>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
@@ -76,25 +81,25 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="copyright.profiles" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/api/v1/desktop/wilma" />
-      <recent name="$PROJECT_DIR$/api/v1/desktop/cards" />
-      <recent name="$PROJECT_DIR$/edison_httplib" />
-      <recent name="$PROJECT_DIR$/api/v1/cards" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/api/v1" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/api" />
       <recent name="$PROJECT_DIR$/api/pbf" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/api/v1/desktop/wilma" />
+      <recent name="$PROJECT_DIR$/api/v1/desktop/cards" />
+      <recent name="$PROJECT_DIR$/edison_httplib" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Built-in Web Server.Unnamed">
@@ -170,10 +175,10 @@
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state x="555" y="185" width="800" height="676" key="#Deployment/0.0.1920.1047@0.0.1920.1047" timestamp="1584568685943" />
-    <state x="637" y="118" width="623" height="564" key="#PHP" timestamp="1585925442518">
-      <screen x="0" y="0" width="1920" height="1047" />
+    <state x="453" y="82" width="623" height="564" key="#PHP" timestamp="1585936208454">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="453" y="82" width="623" height="564" key="#PHP/0.0.1366.728@0.0.1366.728" timestamp="1585907945923" />
+    <state x="453" y="82" width="623" height="564" key="#PHP/0.0.1366.728@0.0.1366.728" timestamp="1585936208454" />
     <state x="637" y="118" width="636" height="810" key="#PHP/0.0.1920.1047@0.0.1920.1047" timestamp="1585925442518" />
     <state x="555" y="184" width="800" height="676" key="#Server" timestamp="1581539012922">
       <screen x="0" y="0" width="1920" height="1047" />
@@ -187,18 +192,20 @@
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state x="676" y="213" width="558" height="621" key="#Unnamed/0.0.1920.1047@0.0.1920.1047" timestamp="1585925443682" />
-    <state x="282" y="44" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585907948047">
+    <state x="282" y="44" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585936210309">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="282" y="44" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1585907948047" />
+    <state x="282" y="44" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1585936210309" />
     <state x="418" y="181" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1047@0.0.1920.1047" timestamp="1585593128669" />
-    <state x="700" y="330" width="745" height="386" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582925174351">
-      <screen x="0" y="0" width="1920" height="1047" />
+    <state x="498" y="229" width="524" height="386" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585938991114">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="498" y="229" width="524" height="386" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1585938991114" />
     <state x="700" y="330" width="745" height="386" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1047@0.0.1920.1047" timestamp="1582925174351" />
-    <state x="745" y="242" width="429" height="561" key="#com.intellij.ide.util.MemberChooser" timestamp="1585722525622">
-      <screen x="0" y="0" width="1920" height="1047" />
+    <state x="530" y="168" width="429" height="561" key="#com.intellij.ide.util.MemberChooser" timestamp="1585940099486">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="530" y="168" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1585940099486" />
     <state x="745" y="242" width="429" height="561" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1047@0.0.1920.1047" timestamp="1585722525622" />
     <state x="693" y="274" width="524" height="498" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584569960543">
       <screen x="0" y="0" width="1920" height="1047" />
@@ -218,25 +225,25 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="443" y="251" width="469" height="251" key="ComposerInitDialogKey/0.0.1366.728@0.0.1366.728" timestamp="1585907964173" />
-    <state width="937" height="276" key="GridCell.Tab.0.bottom" timestamp="1585927960196">
-      <screen x="0" y="0" width="1920" height="1047" />
+    <state width="1324" height="172" key="GridCell.Tab.0.bottom" timestamp="1585937616130">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1304" height="159" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585908012870" />
+    <state width="1324" height="172" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585937616130" />
     <state width="937" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1047@0.0.1920.1047" timestamp="1585927960196" />
-    <state width="937" height="276" key="GridCell.Tab.0.center" timestamp="1585927960193">
-      <screen x="0" y="0" width="1920" height="1047" />
+    <state width="1324" height="172" key="GridCell.Tab.0.center" timestamp="1585937616129">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1304" height="159" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585908012866" />
+    <state width="1324" height="172" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585937616129" />
     <state width="937" height="276" key="GridCell.Tab.0.center/0.0.1920.1047@0.0.1920.1047" timestamp="1585927960193" />
-    <state width="937" height="276" key="GridCell.Tab.0.left" timestamp="1585927960192">
-      <screen x="0" y="0" width="1920" height="1047" />
+    <state width="1324" height="172" key="GridCell.Tab.0.left" timestamp="1585937616128">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1304" height="159" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585908012864" />
+    <state width="1324" height="172" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585937616128" />
     <state width="937" height="276" key="GridCell.Tab.0.left/0.0.1920.1047@0.0.1920.1047" timestamp="1585927960192" />
-    <state width="937" height="276" key="GridCell.Tab.0.right" timestamp="1585927960195">
-      <screen x="0" y="0" width="1920" height="1047" />
+    <state width="1324" height="172" key="GridCell.Tab.0.right" timestamp="1585937616129">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1304" height="159" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585908012868" />
+    <state width="1324" height="172" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585937616129" />
     <state width="937" height="276" key="GridCell.Tab.0.right/0.0.1920.1047@0.0.1920.1047" timestamp="1585927960195" />
     <state x="553" y="313" width="254" height="145" key="NewPhpFileDialog" timestamp="1585908710442">
       <screen x="0" y="0" width="1366" height="728" />
