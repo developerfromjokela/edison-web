@@ -1,4 +1,4 @@
-# Edison Web
+# Edison Web (alpha)
 Material Web Client for Edison Desktop
 
 This is the next gen Edison Desktop, I promise you'll see one of these on the offical website some day
@@ -15,7 +15,7 @@ Features missing:
 - Courses page
 
 ## Requirements
-- A Web server i.e.apache
+- A Web server i.e. apache (I recommend installing apache, note that PhpStorm comes pre-installed with it)
 - PHP >7.0
 - Composer installed
 
