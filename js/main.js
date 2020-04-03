@@ -8,7 +8,7 @@ function lowercase(string) {
     return (typeof string === 'string') ? string.toLowerCase() : string;
 }
 
-function get_request(url, $http, $translate, $mdDialog, callback) {
+function get_request(url, $http, $translate, $mdDialog, callback, errCallback = undefined) {
     $http.get(url, {
         headers: {'Authorization': getAuthentication()}
     })
@@ -23,12 +23,33 @@ function get_request(url, $http, $translate, $mdDialog, callback) {
                 $mdDialog.show(unknownError);
             }
         }, function errorCallback(response) {
+            if (errCallback !== undefined)
+                errCallback(response);
             var unknownError = $mdDialog.alert()
-                    .title($translate.instant('error_occurred'))
-                    .textContent(response.data.cause)
-                    .ok($translate.instant('ok'));
-                $mdDialog.show(unknownError);
+                .title($translate.instant('error_occurred'))
+                .textContent(response.data.cause)
+                .ok($translate.instant('ok'));
+            $mdDialog.show(unknownError);
         });
+}
+
+function ProgressDialogController($scope, title, desc) {
+    $scope.title = title;
+    $scope.msg = desc;
+}
+
+function progressDialog($mdDialog, title, message, locked = false) {
+    return $mdDialog.show({
+        controller: ProgressDialogController,
+        locals: {
+            'title': title,
+            'desc': message
+        },
+        templateUrl: baseURL + '/templates/progress_dialog.html',
+        parent: angular.element(document.body),
+        clickOutsideToClose: !locked,
+    });
+
 }
 
 // Angular deprecated the lowercase function as of v1.6.7. TextAngular hasn't
@@ -36,7 +57,7 @@ function get_request(url, $http, $translate, $mdDialog, callback) {
 angular.lowercase = lowercase;
 
 angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCache', 'ngRoute', 'pascalprecht.translate'])
-    .config(function($mdThemingProvider, $routeProvider, $locationProvider, $provide, $translateProvider, $mdIconProvider) {
+    .config(function ($mdThemingProvider, $routeProvider, $locationProvider, $provide, $translateProvider, $mdIconProvider) {
         $locationProvider.html5Mode(true);
         $locationProvider.hashPrefix('');
         $mdIconProvider.fontSet('md', 'material-icons');
@@ -298,21 +319,41 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
     $scope.pages = [];
     $scope.cards = [];
     offlineData.then(function (item) {
-        console.log();
         if (item != null) {
+            console.log(item.data);
             var data = item.data;
             $scope.pages = data.pages;
             $scope.cards = data.cards;
             $scope.cardsLoaded = true;
             $scope.offlineMode = true;
+            cardMap.clear();
+            data.cards.forEach(function (card) {
+                cardMap.set(card.id, card);
+            });
         }
     });
 
-
+    $scope.openCard = function (card) {
+        console.log(card);
+        card = $scope.getCard(card);
+        var cardURL = card.url;
+        if (cardURL.includes("/sso/wilma/login")) {
+            cardURL = edisonURL + cardURL;
+            progressDialog($mdDialog, $translate.instant('logging_wilma'), $translate.instant('please_wait'), true);
+            get_request("/api/v1/desktop/wilma?sso_url=" + cardURL, $http, $translate, $mdDialog, function (response) {
+                $mdDialog.hide();
+                window.open(response['sso'], "_blank");
+            }, function (response) {
+                $mdDialog.hide();
+            });
+        } else
+            window.open(cardURL, "_blank");
+    };
 
     get_request("/api/v1/desktop", $http, $translate, $mdDialog, function (response) {
         $scope.pages = response.pages;
         $scope.cards = response.cards;
+        cardMap.clear();
         response.cards.forEach(function (card) {
             cardMap.set(card.id, card);
         });

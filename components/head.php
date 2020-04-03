@@ -5,6 +5,7 @@
     <base href="<?php echo BASEURL ?>">
     <script>
         var baseURL = "<?php echo substr(BASEURL, 0, -1)?>";
+        var edisonURL = "<?php echo EDISON_BASEPATH ?>";
     </script>
 
     <?php

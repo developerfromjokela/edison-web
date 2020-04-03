@@ -37,22 +37,27 @@ class EdisonApi
             if ($statuscode == 200) {
                 return $json;
             } else
-                apiError($response->getStatusCode(), "Edison rajapintavirhe: ".$json['detail']);
+                apiError($response->getStatusCode(), "Edison rajapintavirhe: " . $json['detail']);
         } else {
-            apiError(500, "JSON tekstiä ei voitu jäsentää! ".$response->getBody());
+            apiError(500, "JSON tekstiä ei voitu jäsentää! " . $response->getBody());
         }
 
 
     }
 
-    public function getWilmaSSOKey($ssoURL) {
-        $response = $this->client->get($ssoURL, ['cookies' => $this->getSessionJar()]);
-
+    public function getWilmaSSOURL($ssoURL)
+    {
+        $response = $this->client->get($ssoURL, ['cookies' => $this->getSessionJar(), 'allow_redirects' => false]);
+        if ($response->getStatusCode() === 302)
+            return $response->getHeader("Location");
+        else
+            apiError(500, "SSO error: " . $response->getBody());
     }
 
-    public function getPages() {
+    public function getPages()
+    {
         $response = $this->client->get("dreamcards/page/?format=json", ['cookies' => $this->getSessionJar()]);
-        $statuscode =  $response->getStatusCode();
+        $statuscode = $response->getStatusCode();
         $json = json_decode($response->getBody(), true);
         if (is_array($json)) {
             if ($statuscode == 200) {

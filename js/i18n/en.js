@@ -22,5 +22,6 @@ var en_lang = {
     "error_occurred": "Error occurred",
     "all_cards": "All cards",
     "logout": "Sign out",
-    "about": "About this app"
+    "about": "About this app",
+    "logging_wilma": "Signing in to wilma"
 };

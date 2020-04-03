@@ -2,32 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c47f6834-4708-46d7-a79b-a44ae8d1482e" name="Default Changelist" comment="Added the dependencies.php for controlling JS and CSS dependencies">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/dependencies.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/angular-material.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/ubnt_font.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/angular/angular-animate.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/angular/angular-aria.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/angular/angular-messages.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/angular/angular-route.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/angular/angular-translate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/angular/angular-translate.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/angular/angular.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/angular/angular.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/angular/moment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/angular/moment.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/angular/svg-assets-cache.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/dexie.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/dexie.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/jquery-3.4.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/material/angular-material.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/material/angular-material.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/EdisonWeb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/EdisonWeb.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/progress_dialog.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/desktop/wilma/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/desktop/wilma/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/head.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edison_httplib/edison_api.php" beforeDir="false" afterPath="$PROJECT_DIR$/edison_httplib/edison_api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/i18n/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/i18n/en.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/i18n/fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/i18n/fi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/client.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/session_validate.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/session_validate.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,14 +37,21 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Developer From Jokela &lt;40487414+developerfromjokela@users.noreply.github.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="PhpServers">
     <servers>
       <server host="127.0.0.1" id="4f8d84cd-8c2f-4b4d-80c1-f3a418469b10" name="Unnamed" />
     </servers>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
@@ -83,25 +76,25 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="copyright.profiles" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/api/v1/desktop/wilma" />
+      <recent name="$PROJECT_DIR$/api/v1/desktop/cards" />
+      <recent name="$PROJECT_DIR$/edison_httplib" />
+      <recent name="$PROJECT_DIR$/api/v1/cards" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/api/v1" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/api" />
       <recent name="$PROJECT_DIR$/api/pbf" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/api/v1/desktop/wilma" />
-      <recent name="$PROJECT_DIR$/api/v1/desktop/cards" />
-      <recent name="$PROJECT_DIR$/edison_httplib" />
-      <recent name="$PROJECT_DIR$/api/v1/cards" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Built-in Web Server.Unnamed">
@@ -156,6 +149,7 @@
       <workItem from="1585898500066" duration="1185000" />
       <workItem from="1585906486376" duration="798000" />
       <workItem from="1585907794379" duration="4720000" />
+      <workItem from="1585925521593" duration="2471000" />
     </task>
     <servers />
   </component>
@@ -176,11 +170,11 @@
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state x="555" y="185" width="800" height="676" key="#Deployment/0.0.1920.1047@0.0.1920.1047" timestamp="1584568685943" />
-    <state x="453" y="82" width="623" height="564" key="#PHP" timestamp="1585907945923">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="637" y="118" width="623" height="564" key="#PHP" timestamp="1585925442518">
+      <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state x="453" y="82" width="623" height="564" key="#PHP/0.0.1366.728@0.0.1366.728" timestamp="1585907945923" />
-    <state x="637" y="118" width="636" height="810" key="#PHP/0.0.1920.1047@0.0.1920.1047" timestamp="1581539046584" />
+    <state x="637" y="118" width="636" height="810" key="#PHP/0.0.1920.1047@0.0.1920.1047" timestamp="1585925442518" />
     <state x="555" y="184" width="800" height="676" key="#Server" timestamp="1581539012922">
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
@@ -189,6 +183,10 @@
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state x="543" y="181" width="824" height="683" key="#Servers/0.0.1920.1047@0.0.1920.1047" timestamp="1581539025895" />
+    <state x="676" y="213" width="558" height="621" key="#Unnamed" timestamp="1585925443682">
+      <screen x="0" y="0" width="1920" height="1047" />
+    </state>
+    <state x="676" y="213" width="558" height="621" key="#Unnamed/0.0.1920.1047@0.0.1920.1047" timestamp="1585925443682" />
     <state x="282" y="44" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585907948047">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -211,34 +209,35 @@
     </state>
     <state x="509" y="284" width="370" height="274" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1585908516849" />
     <state x="716" y="409" width="477" height="228" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1047@0.0.1920.1047" timestamp="1585638113822" />
-    <state x="284" y="0" width="788" height="726" key="CommitChangelistDialog2" timestamp="1585913031405">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="399" y="0" width="1018" height="825" key="CommitChangelistDialog2" timestamp="1585928141488">
+      <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state x="284" y="0" width="788" height="726" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585913031405" />
+    <state x="399" y="0" width="1018" height="825" key="CommitChangelistDialog2/0.0.1920.1047@0.0.1920.1047" timestamp="1585928141488" />
     <state x="443" y="251" width="469" height="251" key="ComposerInitDialogKey" timestamp="1585907964173">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="443" y="251" width="469" height="251" key="ComposerInitDialogKey/0.0.1366.728@0.0.1366.728" timestamp="1585907964173" />
-    <state width="1304" height="159" key="GridCell.Tab.0.bottom" timestamp="1585908012870">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="937" height="276" key="GridCell.Tab.0.bottom" timestamp="1585927960196">
+      <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state width="1304" height="159" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585908012870" />
-    <state width="937" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1047@0.0.1920.1047" timestamp="1585907033537" />
-    <state width="1304" height="159" key="GridCell.Tab.0.center" timestamp="1585908012866">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="937" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1047@0.0.1920.1047" timestamp="1585927960196" />
+    <state width="937" height="276" key="GridCell.Tab.0.center" timestamp="1585927960193">
+      <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state width="1304" height="159" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585908012866" />
-    <state width="937" height="276" key="GridCell.Tab.0.center/0.0.1920.1047@0.0.1920.1047" timestamp="1585907033537" />
-    <state width="1304" height="159" key="GridCell.Tab.0.left" timestamp="1585908012864">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="937" height="276" key="GridCell.Tab.0.center/0.0.1920.1047@0.0.1920.1047" timestamp="1585927960193" />
+    <state width="937" height="276" key="GridCell.Tab.0.left" timestamp="1585927960192">
+      <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state width="1304" height="159" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585908012864" />
-    <state width="937" height="276" key="GridCell.Tab.0.left/0.0.1920.1047@0.0.1920.1047" timestamp="1585907033537" />
-    <state width="1304" height="159" key="GridCell.Tab.0.right" timestamp="1585908012868">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="937" height="276" key="GridCell.Tab.0.left/0.0.1920.1047@0.0.1920.1047" timestamp="1585927960192" />
+    <state width="937" height="276" key="GridCell.Tab.0.right" timestamp="1585927960195">
+      <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state width="1304" height="159" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585908012868" />
-    <state width="937" height="276" key="GridCell.Tab.0.right/0.0.1920.1047@0.0.1920.1047" timestamp="1585907033537" />
+    <state width="937" height="276" key="GridCell.Tab.0.right/0.0.1920.1047@0.0.1920.1047" timestamp="1585927960195" />
     <state x="553" y="313" width="254" height="145" key="NewPhpFileDialog" timestamp="1585908710442">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -256,6 +255,10 @@
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state x="613" y="141" width="683" height="763" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1047@0.0.1920.1047" timestamp="1581610111878" />
+    <state x="765" y="443" width="390" height="161" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585928069703">
+      <screen x="0" y="0" width="1920" height="1047" />
+    </state>
+    <state x="765" y="443" width="390" height="161" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1047@0.0.1920.1047" timestamp="1585928069703" />
     <state x="857" y="256" width="646" height="532" key="ftp.server.browser" timestamp="1582920691343">
       <screen x="0" y="0" width="1920" height="1047" />
     </state>

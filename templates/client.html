@@ -51,11 +51,16 @@
             <md-tab label="{{page.title}}" ng-repeat="page in pages" data-page-id="{{page.id}}">
                 <md-content class="md-padding" flex ng-cloak>
                     <div class="grid-container grid-container--fill" style="grid-auto-rows: 1fr">
-                            <md-card ng-repeat="card in page.cards" class="grid-element"  style="width: 100px; border-radius: 4px 4px 4px 4px; text-align: center; position: relative;" md-ink-ripple>
+                            <md-card class="grid-element" md-ink-ripple ng-click="openCard(card)"
+                                     ng-repeat="card in page.cards"
+                                     style="width: 100px; border-radius: 4px 4px 4px 4px; text-align: center; position: relative;">
 
-                                <md-card-content layout-align="center center" >
-                                    <div class="md-media-lg card-media"><img src="{{getThumbnail(card)}}" style="max-width: 50px; user-select: none; object-fit: cover;"></div>
-                                    <span class="md-body-1" style="text-overflow: clip; overflow: hidden; word-break: break-word;">{{getCard(card).translated_title}}</span>
+                                <md-card-content layout-align="center center">
+                                    <div class="md-media-lg card-media"><img src="{{getThumbnail(card)}}"
+                                                                             style="max-width: 50px; user-select: none; object-fit: cover;">
+                                    </div>
+                                    <span class="md-body-1"
+                                          style="text-overflow: clip; overflow: hidden; word-break: break-word;">{{getCard(card).translated_title}}</span>
                                 </md-card-content>
                                 <div flex=""></div>
                                 <div style="height: 6px; border-radius: 0 0 4px 4px; background-color: {{ edisonColorToCode(getCard(card).category.color || 'grey') }}"></div>

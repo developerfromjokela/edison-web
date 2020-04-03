@@ -22,6 +22,8 @@ var fi_lang = {
     "error_occurred": "Tapahtui virhe",
     "all_cards": "Kaikki kortit",
     "logout": "Kirjaudu ulos",
-    "about": "Tietoja tästä sovelluksesta"
+    "about": "Tietoja tästä sovelluksesta",
+    "logging_wilma": "Kirjaudutaan Wilmaan"
+
 
 };
