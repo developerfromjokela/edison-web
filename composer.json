@@ -1,0 +1,26 @@
+{
+  "name": "developerfromjokela/edison-web",
+  "type": "library",
+  "description": "Edison Web is a material-design web client for the Edison Desktop, similar to the Edison Android app",
+  "keywords": [
+    "edison",
+    "dream desktop",
+    "rest",
+    "web service",
+    "edison työpöytä"
+  ],
+  "homepage": "https://developerfromjokela.com/edison/web",
+  "license": "GNU GPL v2",
+  "authors": [
+    {
+      "name": "Developer From Jokela",
+      "email": "info@developerfromjokela.com",
+      "homepage": "https://developerfromjokela.com",
+      "role": "Developer"
+    }
+  ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.5",
+      "ext-json": "*"
+    }
+}

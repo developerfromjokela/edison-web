@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c47f6834-4708-46d7-a79b-a44ae8d1482e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML4 File" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpServers">
+    <servers>
+      <server host="127.0.0.1" id="4f8d84cd-8c2f-4b4d-80c1-f3a418469b10" name="Unnamed" />
+    </servers>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1Xip2PZKsw1dbWEFhW2b4V6kom2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML4 File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api/v1/desktop/wilma" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="copyright.profiles" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api/v1" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/api" />
+      <recent name="$PROJECT_DIR$/api/pbf" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api/v1/desktop/wilma" />
+      <recent name="$PROJECT_DIR$/api/v1/desktop/cards" />
+      <recent name="$PROJECT_DIR$/edison_httplib" />
+      <recent name="$PROJECT_DIR$/api/v1/cards" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHP Built-in Web Server.Unnamed">
+    <configuration name="Unnamed" type="FirefoxRemoteDebugType" nameIsGenerated="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" nameIsGenerated="true" document_root="$PROJECT_DIR$/" port="8080">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Firefox Remote.Unnamed" />
+      <item itemvalue="PHP Built-in Web Server.Unnamed" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c47f6834-4708-46d7-a79b-a44ae8d1482e" name="Default Changelist" comment="" />
+      <created>1581538561692</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581538561692</updated>
+      <workItem from="1581538563607" duration="2746000" />
+      <workItem from="1581604020345" duration="55000" />
+      <workItem from="1581604196788" duration="11268000" />
+      <workItem from="1581699528684" duration="53000" />
+      <workItem from="1582268298908" duration="5331000" />
+      <workItem from="1582443889525" duration="27000" />
+      <workItem from="1582899655847" duration="4077000" />
+      <workItem from="1582907729066" duration="9639000" />
+      <workItem from="1582962812601" duration="82000" />
+      <workItem from="1582969392552" duration="894000" />
+      <workItem from="1582987179094" duration="4000" />
+      <workItem from="1582989046537" duration="547000" />
+      <workItem from="1582992059730" duration="239000" />
+      <workItem from="1583048682770" duration="107000" />
+      <workItem from="1584568650732" duration="1974000" />
+      <workItem from="1584602537217" duration="6000" />
+      <workItem from="1584603025376" duration="4361000" />
+      <workItem from="1584774319319" duration="4375000" />
+      <workItem from="1584947032811" duration="25000" />
+      <workItem from="1584957228628" duration="288000" />
+      <workItem from="1584957660532" duration="440000" />
+      <workItem from="1584959096168" duration="628000" />
+      <workItem from="1585593021812" duration="10934000" />
+      <workItem from="1585634847724" duration="7928000" />
+      <workItem from="1585722306754" duration="1358000" />
+      <workItem from="1585730008402" duration="3840000" />
+      <workItem from="1585736867670" duration="2000" />
+      <workItem from="1585898500066" duration="1185000" />
+      <workItem from="1585906486376" duration="798000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="555" y="185" width="800" height="676" key="#Deployment" timestamp="1584568685943">
+      <screen x="0" y="0" width="1920" height="1047" />
+    </state>
+    <state x="555" y="185" width="800" height="676" key="#Deployment/0.0.1920.1047@0.0.1920.1047" timestamp="1584568685943" />
+    <state x="637" y="118" width="636" height="810" key="#PHP" timestamp="1581539046584">
+      <screen x="0" y="0" width="1920" height="1047" />
+    </state>
+    <state x="637" y="118" width="636" height="810" key="#PHP/0.0.1920.1047@0.0.1920.1047" timestamp="1581539046584" />
+    <state x="555" y="184" width="800" height="676" key="#Server" timestamp="1581539012922">
+      <screen x="0" y="0" width="1920" height="1047" />
+    </state>
+    <state x="555" y="184" width="800" height="676" key="#Server/0.0.1920.1047@0.0.1920.1047" timestamp="1581539012922" />
+    <state x="543" y="181" width="824" height="683" key="#Servers" timestamp="1581539025895">
+      <screen x="0" y="0" width="1920" height="1047" />
+    </state>
+    <state x="543" y="181" width="824" height="683" key="#Servers/0.0.1920.1047@0.0.1920.1047" timestamp="1581539025895" />
+    <state x="418" y="181" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585593128669">
+      <screen x="0" y="0" width="1920" height="1047" />
+    </state>
+    <state x="418" y="181" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1047@0.0.1920.1047" timestamp="1585593128669" />
+    <state x="700" y="330" width="745" height="386" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582925174351">
+      <screen x="0" y="0" width="1920" height="1047" />
+    </state>
+    <state x="700" y="330" width="745" height="386" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1047@0.0.1920.1047" timestamp="1582925174351" />
+    <state x="745" y="242" width="429" height="561" key="#com.intellij.ide.util.MemberChooser" timestamp="1585722525622">
+      <screen x="0" y="0" width="1920" height="1047" />
+    </state>
+    <state x="745" y="242" width="429" height="561" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1047@0.0.1920.1047" timestamp="1585722525622" />
+    <state x="693" y="274" width="524" height="498" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584569960543">
+      <screen x="0" y="0" width="1920" height="1047" />
+    </state>
+    <state x="693" y="274" width="524" height="498" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1047@0.0.1920.1047" timestamp="1584569960543" />
+    <state x="716" y="409" width="477" height="228" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1585638113822">
+      <screen x="0" y="0" width="1920" height="1047" />
+    </state>
+    <state x="716" y="409" width="477" height="228" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1047@0.0.1920.1047" timestamp="1585638113822" />
+    <state width="937" height="276" key="GridCell.Tab.0.bottom" timestamp="1585907033537">
+      <screen x="0" y="0" width="1920" height="1047" />
+    </state>
+    <state width="937" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1047@0.0.1920.1047" timestamp="1585907033537" />
+    <state width="937" height="276" key="GridCell.Tab.0.center" timestamp="1585907033537">
+      <screen x="0" y="0" width="1920" height="1047" />
+    </state>
+    <state width="937" height="276" key="GridCell.Tab.0.center/0.0.1920.1047@0.0.1920.1047" timestamp="1585907033537" />
+    <state width="937" height="276" key="GridCell.Tab.0.left" timestamp="1585907033537">
+      <screen x="0" y="0" width="1920" height="1047" />
+    </state>
+    <state width="937" height="276" key="GridCell.Tab.0.left/0.0.1920.1047@0.0.1920.1047" timestamp="1585907033537" />
+    <state width="937" height="276" key="GridCell.Tab.0.right" timestamp="1585907033537">
+      <screen x="0" y="0" width="1920" height="1047" />
+    </state>
+    <state width="937" height="276" key="GridCell.Tab.0.right/0.0.1920.1047@0.0.1920.1047" timestamp="1585907033537" />
+    <state x="777" y="450" width="356" height="147" key="NewPhpFileDialog" timestamp="1585594351295">
+      <screen x="0" y="0" width="1920" height="1047" />
+    </state>
+    <state x="777" y="450" width="356" height="147" key="NewPhpFileDialog/0.0.1920.1047@0.0.1920.1047" timestamp="1585594351295" />
+    <state x="456" y="158" key="SettingsEditor" timestamp="1585638109260">
+      <screen x="0" y="0" width="1920" height="1047" />
+    </state>
+    <state x="456" y="158" key="SettingsEditor/0.0.1920.1047@0.0.1920.1047" timestamp="1585638109260" />
+    <state x="613" y="141" width="683" height="763" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1581610111878">
+      <screen x="0" y="0" width="1920" height="1047" />
+    </state>
+    <state x="613" y="141" width="683" height="763" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1047@0.0.1920.1047" timestamp="1581610111878" />
+    <state x="857" y="256" width="646" height="532" key="ftp.server.browser" timestamp="1582920691343">
+      <screen x="0" y="0" width="1920" height="1047" />
+    </state>
+    <state x="857" y="256" width="646" height="532" key="ftp.server.browser/0.0.1920.1047@0.0.1920.1047" timestamp="1582920691343" />
+    <state x="828" y="420" width="253" height="206" key="publish.login" timestamp="1584568668881">
+      <screen x="0" y="0" width="1920" height="1047" />
+    </state>
+    <state x="828" y="420" width="253" height="206" key="publish.login/0.0.1920.1047@0.0.1920.1047" timestamp="1584568668881" />
+    <state x="624" y="239" key="run.anything.popup" timestamp="1585732099831">
+      <screen x="0" y="0" width="1920" height="1047" />
+    </state>
+    <state x="624" y="239" key="run.anything.popup/0.0.1920.1047@0.0.1920.1047" timestamp="1585732099831" />
+    <state x="623" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1584776235048">
+      <screen x="0" y="0" width="1920" height="1047" />
+    </state>
+    <state x="623" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1047@0.0.1920.1047" timestamp="1584776235048" />
+  </component>
+</project>

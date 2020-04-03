@@ -1,0 +1,17 @@
+<!--
+  ~ Copyright (c) 2020 EdisonWeb.
+  ~ @author Developer From Jokela
+  -->
+
+<md-dialog md-theme="login" aria-label="appsid" ng-class="dialog.css" class="_md md-login-theme md-transition-in" role="dialog" tabindex="-1" aria-describedby="dialogContent_4" style="">
+    <md-progress-linear md-mode="indeterminate" md-theme="login_progress"></md-progress-linear>
+    <md-dialog-content class="md-dialog-content" role="document" tabindex="-1" id="dialogContent_4">
+        <h2 class="md-title ng-binding">{{'checking_session' | translate}}</h2>
+        <!-- ngIf: ::dialog.mdHtmlContent -->
+        <!-- ngIf: ::!dialog.mdHtmlContent -->
+        <div ng-if="::!dialog.mdHtmlContent" class="md-dialog-content-body ng-scope" style="">
+            <p class="ng-binding">{{'please_wait' | translate}}</p>
+        </div>
+        <!-- end ngIf: ::!dialog.mdHtmlContent -->
+    </md-dialog-content>
+</md-dialog>

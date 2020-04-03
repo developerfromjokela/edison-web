@@ -1,0 +1,30 @@
+<!--
+  ~ Copyright (c) 2020 EdisonWeb.
+  ~ @author Developer From Jokela
+  -->
+
+<md-content style="background: linear-gradient(135deg, rgba(0,172,193,1) 35%, rgba(17,105,116,1) 100%); " layout-fill>
+    <div class="flexbox-parent">
+        <div layout="column" layout-align="center center" style="min-height: 500px">
+            <img src="/images/edison.svg" style="color: black; margin: 7px;" height="80px"/>
+            <div layout="column" layout-align="center center" style="margin-bottom: 5px">
+                <h2 style="margin: 1px;">{{'welcome' | translate}}</h2>
+                <h3 style="margin-top: 6px;">{{'login_msg' | translate}}</h3>
+            </div>
+            <div ng-repeat="option in options">
+                <md-button class="md-raised md-primary" ng-click="option.onclick()" style="border-radius: 18px; color: #fff; background-color: #116974; padding-left: 10px; padding-right: 10px; font-size: 12px">
+                    <md-icon
+                            style="margin-bottom: 3px"
+                            md-svg-src="{{ option.src }}"
+                            aria-label="{{ option.icon }}"
+                            class="material-icons"
+                            ng-class="md-24"
+                            ng-bind="option.icon">
+                    </md-icon>
+                    {{ option.title | translate }}
+                </md-button>
+            </div>
+
+        </div>
+    </div>
+</md-content>
