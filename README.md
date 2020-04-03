@@ -14,6 +14,11 @@ Features missing:
 - Login via a Android phone using the Edison app
 - Courses page
 
+## Requirements
+- A Web server i.e.apache
+- PHP >7.0
+- Composer installed
+
 ## Contributing
 Feel free to make any changes you wish, remember to do a pull request
 
