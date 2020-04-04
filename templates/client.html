@@ -6,14 +6,17 @@
 <section layout="row" flex="" style="background-color: #E1E2E1;">
 
 
-    <md-content flex="" >
-        <md-progress-linear md-mode="indeterminate" md-theme="progress" ng-show="!cardsLoaded || offlineMode"></md-progress-linear>
+    <md-content flex="" style="background-color: #E1E2E1;">
+        <md-progress-linear md-mode="indeterminate" md-theme="progress"
+                            ng-show="!cardsLoaded || offlineMode"></md-progress-linear>
         <md-toolbar>
             <div class="md-toolbar-tools">
 
                 <h2 flex="">Edison</h2>
                 <div md-truncate=""></div>
-
+                <md-button aria-label="Menu" class="md-icon-button" ng-click="openPageAdd()">
+                    <md-icon md-font-set="md">add</md-icon>
+                </md-button>
                 <md-menu>
                     <md-button aria-label="Menu" class="md-icon-button" ng-click="$mdMenu.open($event);">
                         <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
@@ -47,27 +50,40 @@
             }
 
         </style>
-        <md-tabs md-dynamic-height style="background-color: white" ng-show="cardsLoaded">
-            <md-tab label="{{page.title}}" ng-repeat="page in pages" data-page-id="{{page.id}}">
-                <md-content class="md-padding" flex ng-cloak>
-                    <div class="grid-container grid-container--fill" style="grid-auto-rows: 1fr">
-                        <md-card class="grid-element" md-ink-ripple ng-click="openCard(card)"
-                                 ng-repeat="card in page.cards"
-                                 style="cursor: pointer; width: 100px; border-radius: 4px 4px 4px 4px; text-align: center; position: relative;"
-                                 tabindex="0">
+        <md-tabs md-dynamic-height md-swipe-content ng-show="cardsLoaded" style="background-color: white">
+            <md-tab data-page-id="{{page.id}}" ng-repeat="page in pages">
+                <md-tab-label>
+                    <dummy ng-right-click="openPageActions(page)" style="height: 100%; display: inline-block;">
+                        {{page.title}}
+                    </dummy>
+                </md-tab-label>
 
-                            <md-card-content layout-align="center center">
-                                <div class="md-media-lg card-media"><img src="{{getThumbnail(card)}}"
-                                                                         style="max-width: 50px; user-select: none; object-fit: cover;">
-                                </div>
-                                <span class="md-body-1"
-                                      style="text-overflow: clip; overflow: hidden; word-break: break-word;">{{getCard(card).translated_title}}</span>
-                            </md-card-content>
-                            <div flex=""></div>
-                            <div style="height: 6px; border-radius: 0 0 4px 4px; background-color: {{ edisonColorToCode(getCard(card).category.color || 'grey') }}"></div>
+                <md-tab-body>
+                    <md-content class="md-padding" flex ng-cloak>
+                        <div class="grid-container grid-container--fill" style="grid-auto-rows: 1fr">
+                            <md-card class="grid-element" md-ink-ripple ng-click="openCard(card)"
+                                     ng-repeat="card in page.cards"
+                                     style="cursor: pointer; width: 100px; border-radius: 4px 4px 4px 4px; text-align: center; position: relative;"
+                                     tabindex="0">
+
+                                <md-card-content layout-align="center center">
+                                    <div class="md-media-lg card-media"><img src="{{getThumbnail(card)}}"
+                                                                             style="max-width: 50px; user-select: none; object-fit: cover;">
+                                    </div>
+                                    <span class="md-body-1"
+                                          style="text-overflow: clip; overflow: hidden; word-break: break-word;">{{getCard(card).translated_title}}</span>
+                                </md-card-content>
+                                <div flex=""></div>
+                                <div style="height: 6px; border-radius: 0 0 4px 4px; background-color: {{ edisonColorToCode(getCard(card).category.color || 'grey') }}"></div>
                             </md-card>
-                    </div>
-                </md-content>
+                        </div>
+                        <div layout-align="center center" layout-fill ng-show="!page.cards.length"
+                             style="text-align: center; height: 120px;">
+                            <h3>{{'no_cards' | translate}}</h3>
+                            <span>{{'add_card_hint' | translate}}</span>
+                        </div>
+                    </md-content>
+                </md-tab-body>
             </md-tab>
             <md-tab label="{{'all_cards' | translate}}">
                 <md-content class="md-padding" md-flex>
@@ -75,6 +91,7 @@
                 </md-content>
             </md-tab>
         </md-tabs>
+
 
     </md-content>
 

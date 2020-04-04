@@ -29,5 +29,14 @@ var fi_lang = {
     "email_dev": "Lähetä sähköpostia kehittäjälle",
     "report_issue": "Ilmoita ongelmasta",
     "not_implemented_yet": "Ei vielä valmis",
-    "not_implemented_yet_msg": "Tämä ominaisuus tai toiminto on toistaiseksi työstön alla"
+    "not_implemented_yet_msg": "Tämä ominaisuus tai toiminto on toistaiseksi työstön alla",
+    "add_page": "Lisää uusi työpöytä",
+    "add_page_msg": "Uusi työpöytä tulee olemaan erillinen työpöytä kaikista muista. Huomio: Virallinen Edison ei tue monityöpöytää",
+    "page_placeholder": "🤔",
+    "adding_page": "Lisätään uusi työpöytä",
+    "delete": "Poista",
+    "delete_page_warning": "Haluatko poistaa tämän työpöydän?",
+    "deleting_page": "Poistetaan työpöytää",
+    "no_cards": "Täällä ei ole kortteja",
+    "add_card_hint": "Klikkaa + lisätäksesi kortin"
 };

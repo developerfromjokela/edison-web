@@ -3,7 +3,7 @@
  * @author Developer From Jokela
  */
 
-var version = "1.0-alpha";
+var version = "1.0.1-alpha";
 var debug = false;
 
 
@@ -18,6 +18,31 @@ function log(message) {
 
 function get_request(url, $http, $translate, $mdDialog, callback, errCallback = undefined) {
     $http.get(url, {
+        headers: {'Authorization': getAuthentication()}
+    })
+        .then(function (response) {
+            if (response.data.status === true) {
+                callback(response.data);
+            } else {
+                var unknownError = $mdDialog.alert()
+                    .title($translate.instant('error_occurred'))
+                    .textContent(response.data.cause)
+                    .ok($translate.instant('ok'));
+                $mdDialog.show(unknownError);
+            }
+        }, function errorCallback(response) {
+            if (errCallback !== undefined)
+                errCallback(response);
+            var unknownError = $mdDialog.alert()
+                .title($translate.instant('error_occurred'))
+                .textContent(response.data.cause)
+                .ok($translate.instant('ok'));
+            $mdDialog.show(unknownError);
+        });
+}
+
+function post_request(url, data, $http, $translate, $mdDialog, callback, errCallback = undefined) {
+    $http.post(url, data, {
         headers: {'Authorization': getAuthentication()}
     })
         .then(function (response) {
@@ -58,6 +83,20 @@ function progressDialog($mdDialog, title, message, locked = false) {
         clickOutsideToClose: !locked,
     });
 
+}
+
+function PageActionsController($scope, $mdDialog, $translate, $http, page, refreshDesktop) {
+    $scope.delete = function () {
+        $mdDialog.show(
+            $mdDialog.confirm().title($translate.instant('delete')).textContent($translate.instant('delete_page_warning')).ok($translate.instant('delete')).cancel($translate.instant('cancel'))
+        ).then(function (result) {
+            progressDialog($mdDialog, $translate.instant('deleting_page'), $translate.instant('please_wait'), true);
+            post_request(baseURL + "api/v1/desktop/pages/delete/", page, $http, $translate, $mdDialog, function () {
+                $mdDialog.hide();
+                refreshDesktop(false);
+            });
+        });
+    };
 }
 
 // Angular deprecated the lowercase function as of v1.6.7. TextAngular hasn't
@@ -272,7 +311,7 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
         };
 
         function checkSession() {
-            $http.post("/api/v1/session/csrf_token/", {
+            $http.post(baseURL + "api/v1/session/csrf_token/", {
                 "session": session
             })
                 .then(function (response) {
@@ -360,6 +399,26 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
             });
         }
     });
+    $scope.openPageAdd = function () {
+        var confirm = $mdDialog.prompt()
+            .title($translate.instant('add_page'))
+            .textContent($translate.instant('add_page_msg'))
+            .placeholder($translate.instant('page_placeholder'))
+            .ariaLabel('add_page')
+            .required(true)
+            .ok($translate.instant('continue'))
+            .cancel($translate.instant('cancel'));
+
+        $mdDialog.show(confirm).then(function (result) {
+            progressDialog($mdDialog, $translate.instant('adding_page'), $translate.instant('please_wait'), true);
+            post_request(baseURL + "api/v1/desktop/pages/add/", {
+                "title": result
+            }, $http, $translate, $mdDialog, function (response) {
+                $mdDialog.hide();
+                refreshDesktop(false);
+            })
+        }, undefined);
+    };
 
     $scope.openCard = function (card) {
         log(card);
@@ -368,7 +427,7 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
         if (cardURL.includes("/sso/wilma/login")) {
             cardURL = edisonURL + cardURL;
             progressDialog($mdDialog, $translate.instant('logging_wilma'), $translate.instant('please_wait'), true);
-            get_request("/api/v1/desktop/wilma?sso_url=" + cardURL, $http, $translate, $mdDialog, function (response) {
+            get_request(baseURL + "api/v1/desktop/wilma?sso_url=" + cardURL, $http, $translate, $mdDialog, function (response) {
                 $mdDialog.hide();
                 window.open(response['sso'], "_blank");
             }, function (response) {
@@ -378,15 +437,57 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
             window.open(cardURL, "_blank");
     };
 
-    get_request("/api/v1/desktop", $http, $translate, $mdDialog, function (response) {
-        $scope.pages = response.pages;
-        $scope.cards = response.cards;
-        cardMap.clear();
-        response.cards.forEach(function (card) {
-            cardMap.set(card.id, card);
+    $scope.handleClick = function (event) {
+        switch (event.which) {
+            case 3:
+                alert("right click");
+                $mdMenu.open(event);
+                break;
+            default:
+                alert("you have a strange mouse!");
+                break;
+        }
+    };
+
+    $scope.openPageActions = function (page) {
+        $mdDialog.show({
+            controller: PageActionsController,
+            locals: {
+                'page': page,
+                'refreshDesktop': refreshDesktop
+            },
+            templateUrl: baseURL + 'templates/page_actions.html',
+            parent: angular.element(document.body),
+            clickOutsideToClose: true,
         });
-        $scope.cardsLoaded = true;
-        $scope.offlineMode = false;
-        saveOfflineData(response);
-    });
+    };
+
+    function refreshDesktop(first = true) {
+        if (!first)
+            $scope.offlineMode = true;
+        get_request(baseURL + "api/v1/desktop", $http, $translate, $mdDialog, function (response) {
+            $scope.pages = response.pages;
+            $scope.cards = response.cards;
+            cardMap.clear();
+            response.cards.forEach(function (card) {
+                cardMap.set(card.id, card);
+            });
+            $scope.cardsLoaded = true;
+            $scope.offlineMode = false;
+            saveOfflineData(response);
+        });
+    }
+
+
+    refreshDesktop();
+}).directive('ngRightClick', function ($parse) {
+    return function (scope, element, attrs) {
+        var fn = $parse(attrs.ngRightClick);
+        element.bind('contextmenu', function (event) {
+            scope.$apply(function () {
+                event.preventDefault();
+                fn(scope, {$event: event});
+            });
+        });
+    };
 });
