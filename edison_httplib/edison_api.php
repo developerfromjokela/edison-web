@@ -14,7 +14,7 @@ class EdisonApi
     private $session;
 
     /**
-     * EdisonAuthApi constructor.
+     * EdisonApi constructor.
      */
     public function __construct($session)
     {
@@ -63,37 +63,85 @@ class EdisonApi
             if ($statuscode == 200) {
                 return $json;
             } else
-                apiError($response->getStatusCode(), "Edison rajapintavirhe: ".$json['detail']);
+                apiError($response->getStatusCode(), "Edison rajapintavirhe: " . $json['detail']);
         } else {
-            apiError(500, "JSON tekstiä ei voitu jäsentää! ".$response->getBody());
+            apiError(500, "JSON tekstiä ei voitu jäsentää! " . $response->getBody());
         }
 
 
     }
 
-    public function getPage($pageId) {
-        $response = $this->client->get("dreamcards/page/".$pageId."/?format=json", ['cookies' => $this->getSessionJar()]);
-        $statuscode =  $response->getStatusCode();
+    public function getPage($pageId)
+    {
+        $response = $this->client->get("dreamcards/page/" . $pageId . "/?format=json", ['cookies' => $this->getSessionJar()]);
+        $statuscode = $response->getStatusCode();
         $json = json_decode($response->getBody(), true);
         if (is_array($json)) {
             if ($statuscode == 200) {
                 return $json;
             } else
-                apiError($response->getStatusCode(), "Edison rajapintavirhe: ".$json['detail']);
+                apiError($statuscode, "Edison rajapintavirhe: " . $json['detail']);
         } else {
-            apiError(500, "JSON tekstiä ei voitu jäsentää! ".$response->getBody());
+            apiError(500, "JSON tekstiä ei voitu jäsentää! " . $response->getBody());
         }
 
 
     }
 
+    public function addPage($title, $csrfToken)
+    {
+        $response = $this->client->post("dreamcards/page/?format=json", [GuzzleHttp\RequestOptions::JSON => ['title' => $title], 'cookies' => $this->getPostSessionJar($csrfToken),
+            'headers' => ["Referer" => "https://app.edison.fi/", "X-CSRFToken" => $csrfToken['csrf']]]);
+        $statuscode = $response->getStatusCode();
+        $json = json_decode($response->getBody(), true);
+        if (is_array($json)) {
+            if ($statuscode == 201) {
+                return $json;
+            } else
+                apiError($statuscode, "Edison rajapintavirhe: " . $json['detail']);
+        } else {
+            apiError(500, "JSON tekstiä ei voitu jäsentää! " . $response->getBody());
+        }
+    }
+
+    public function deletePage($pageId, $csrfToken)
+    {
+        $response = $this->client->delete("dreamcards/page/" . $pageId . "/?format=json", ['cookies' => $this->getPostSessionJar($csrfToken),
+            'headers' => ["Referer" => EDISON_BASEPATH, "X-CSRFToken" => $csrfToken['csrf']]]);
+        $statuscode = $response->getStatusCode();
+        $json = json_decode($response->getBody(), true);
+        if ($statuscode == 204) {
+            return true;
+        } else if ($statuscode == 404) {
+            apiError(404, "Poistettavaa sivua ei löydy. Tarkista ID ja yritä uudelleen");
+        } else {
+            if (is_array($json))
+                apiError($statuscode, "Edison rajapintavirhe: " . $json['detail']);
+            else
+                apiError(500, "JSON tekstiä ei voitu jäsentää! " . $response->getBody());
+        }
+    }
+
     /**
-     * Getting Wilma session cookies
+     * Getting Edison session cookies
      * @return CookieJar
      */
-    private function getSessionJar() {
+    private function getSessionJar()
+    {
         return CookieJar::fromArray([
             'appsid' => $this->session
+        ], "app.edison.fi");
+    }
+
+    /**
+     * Getting Edison session cookies with the CSRF Token
+     * @return CookieJar
+     */
+    private function getPostSessionJar($csrfToken)
+    {
+        return CookieJar::fromArray([
+            'appsid' => $this->session,
+            'csrftoken' => $csrfToken['csrf']
         ], "app.edison.fi");
     }
 

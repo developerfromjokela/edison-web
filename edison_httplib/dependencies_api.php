@@ -44,7 +44,7 @@ function isValidJSON($str) {
 function getAuth() {
     $token = null;
     $headers = apache_request_headers();
-    if(isset($headers['Authorization'])){
+    if (isset($headers['Authorization'])) {
         $session = $headers['Authorization'];
         $edisonAuthApi = new EdisonAuthApi();
         $edisonAuthApi->validateAuthentication($session);
@@ -52,6 +52,29 @@ function getAuth() {
     } else {
         apiError(401, "No authentication presented. Check the 'Authorization' header");
     }
+}
+
+function getCSRFToken($session)
+{
+    $edisonAuthApi = new EdisonAuthApi();
+    return $edisonAuthApi->getCSRFToken($session);
+}
+
+function getPost()
+{
+    $json_params = file_get_contents("php://input");
+    if (strlen($json_params) > 0 && isValidJSON($json_params)) {
+        return json_decode($json_params, true);
+    } else
+        apiError(400, "Invalid JSON Body!");
+}
+
+function getPostParameter($name, $data)
+{
+    if (!array_key_exists($name, $data))
+        apiError(400, $name . " is missing");
+    else
+        return $data[$name];
 }
 
 //set error handlers
