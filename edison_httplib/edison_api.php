@@ -22,9 +22,9 @@ class EdisonApi
 
         $this->client = new Client([
             // Base URI is used with relative requests
-            'base_uri' => EDISON_BASEPATH."/uiapi/1/",
+            'base_uri' => EDISON_BASEPATH . "/uiapi/1/",
             // You can set any number of default request options.
-            'timeout' => 30.0,
+            'timeout' => 10.0,
             'http_errors' => false
         ]);
     }

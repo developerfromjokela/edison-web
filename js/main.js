@@ -475,6 +475,9 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
             $scope.cardsLoaded = true;
             $scope.offlineMode = false;
             saveOfflineData(response);
+        }, function (error) {
+            $scope.cardsLoaded = true;
+            $scope.offlineMode = false;
         });
     }
 
