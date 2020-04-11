@@ -3,7 +3,7 @@
  * @author Developer From Jokela
  */
 
-var version = "1.0.1-alpha";
+var version = "1.0.2-alpha";
 var debug = false;
 
 
@@ -357,8 +357,11 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
         return cardMap.get(cardId)
     };
     $scope.getThumbnail = function (cardId) {
-        var card = cardMap.get(cardId);
-        if (card.thumbnail === undefined)
+        if (cardId === parseInt(cardId, 10))
+            var card = cardMap.get(cardId);
+        else
+            card = cardId;
+        if (card.thumbnail === undefined || card.thumbnail === null)
             return "https://app.edison.fi/static/dreamcards/img/bookmark.png";
         else
             return "https://app.edison.fi" + card.thumbnail;
@@ -391,6 +394,8 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
             var data = item.data;
             $scope.pages = data.pages;
             $scope.cards = data.cards;
+            if (data.categories !== undefined)
+                $scope.categories = data.categories;
             $scope.cardsLoaded = true;
             $scope.offlineMode = true;
             cardMap.clear();
@@ -422,7 +427,8 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
 
     $scope.openCard = function (card) {
         log(card);
-        card = $scope.getCard(card);
+        if (card === parseInt(card, 10))
+            card = cardMap.get(card);
         var cardURL = card.url;
         if (cardURL.includes("/sso/wilma/login")) {
             cardURL = edisonURL + cardURL;
@@ -440,11 +446,9 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
     $scope.handleClick = function (event) {
         switch (event.which) {
             case 3:
-                alert("right click");
                 $mdMenu.open(event);
                 break;
             default:
-                alert("you have a strange mouse!");
                 break;
         }
     };
@@ -462,12 +466,28 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
         });
     };
 
+    $scope.getCategoryCards = function (category) {
+        var cards = [];
+        $scope.cards.forEach(function (card) {
+            if (card.category !== null && category != null) {
+                if (card.category.id === category.id) {
+                    cards.push(card);
+                }
+            } else if (category === null && card.category === null)
+                cards.push(card);
+
+        });
+        return cards;
+    };
+
     function refreshDesktop(first = true) {
         if (!first)
             $scope.offlineMode = true;
         get_request(baseURL + "api/v1/desktop", $http, $translate, $mdDialog, function (response) {
             $scope.pages = response.pages;
             $scope.cards = response.cards;
+            $scope.categories = response.categories;
+            log(response.categories);
             cardMap.clear();
             response.cards.forEach(function (card) {
                 cardMap.set(card.id, card);

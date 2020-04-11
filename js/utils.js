@@ -4,7 +4,7 @@
  */
 
 function checkSession($location, login){
-    console.log(isLoggedIn());
+    log(isLoggedIn());
     if (!isLoggedIn())
         $location.path("login");
     else if (!login)
@@ -38,7 +38,7 @@ function saveOfflineData(offlineData) {
 
 function getOfflineData() {
     var db = getOfflineDatabase();
-    console.log(getFullAuthentication()['id']);
+    log(getFullAuthentication()['id']);
     return db.offlineData.get(getFullAuthentication()['id']);
 }
 

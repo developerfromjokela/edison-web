@@ -9,8 +9,9 @@ $session = getAuth();
 $edisonApi = new EdisonApi($session);
 $cards = $edisonApi->getCards();
 $pages = $edisonApi->getPages();
+$categories = $edisonApi->getCategories();
 $pagesAll = array();
 foreach ($pages as $page) {
     array_push($pagesAll, $edisonApi->getPage($page['id']));
 }
-apiResponse(array("cards" => $cards, "pages" => $pagesAll));
+apiResponse(array("cards" => $cards, "pages" => $pagesAll, "categories" => $categories));

@@ -38,5 +38,6 @@ var fi_lang = {
     "delete_page_warning": "Haluatko poistaa tämän työpöydän?",
     "deleting_page": "Poistetaan työpöytää",
     "no_cards": "Täällä ei ole kortteja",
-    "add_card_hint": "Klikkaa + lisätäksesi kortin"
+    "add_card_hint": "Klikkaa + lisätäksesi kortin",
+    "others_category": "Muut kortit"
 };

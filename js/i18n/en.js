@@ -38,5 +38,6 @@ var en_lang = {
     "delete_page_warning": "Are you sure to delete the page",
     "deleting_page": "Deleting page",
     "no_cards": "No cards here",
-    "add_card_hint": "Click + to add a card"
+    "add_card_hint": "Click + to add a card",
+    "others_category": "Other cards"
 };

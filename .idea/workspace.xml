@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c47f6834-4708-46d7-a79b-a44ae8d1482e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/desktop/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/desktop/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/edison_httplib/edison_api.php" beforeDir="false" afterPath="$PROJECT_DIR$/edison_httplib/edison_api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/i18n/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/i18n/en.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/i18n/fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/i18n/fi.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/client.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +149,9 @@
       <workItem from="1585980613107" duration="47000" />
       <workItem from="1585995605382" duration="8358000" />
       <workItem from="1586003984437" duration="6000" />
-      <workItem from="1586155525051" duration="2315000" />
+      <workItem from="1586155525051" duration="3603000" />
+      <workItem from="1586172436219" duration="22000" />
+      <workItem from="1586619049758" duration="2908000" />
     </task>
     <task id="LOCAL−00001" summary="Implemented Wilma Authentication for Wilma Cards&#10;Implemented Card clicking">
       <created>1585928167425</created>
@@ -164,7 +171,13 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1586003855071</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="Added a error listener for the refresh method&#10;Decreased the timeout">
+      <created>1586159150054</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1586159150054</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +193,8 @@
     <MESSAGE value="Implemented Wilma Authentication for Wilma Cards&#10;Implemented Card clicking" />
     <MESSAGE value="Implemented APIs for adding and deleting pages" />
     <MESSAGE value="Implemented pages adding and deleting in the UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented pages adding and deleting in the UI" />
+    <MESSAGE value="Added a error listener for the refresh method&#10;Decreased the timeout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a error listener for the refresh method&#10;Decreased the timeout" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -232,35 +246,35 @@
     </state>
     <state x="509" y="284" width="370" height="274" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1585908516849" />
     <state x="716" y="409" width="477" height="228" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1047@0.0.1920.1047" timestamp="1585638113822" />
-    <state x="399" y="0" width="1018" height="825" key="CommitChangelistDialog2" timestamp="1586003854963">
+    <state x="399" y="0" width="1018" height="825" key="CommitChangelistDialog2" timestamp="1586623435927">
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state x="284" y="0" width="788" height="726" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585913031405" />
-    <state x="399" y="0" width="1018" height="825" key="CommitChangelistDialog2/0.0.1920.1047@0.0.1920.1047" timestamp="1586003854963" />
+    <state x="399" y="0" width="1018" height="825" key="CommitChangelistDialog2/0.0.1920.1047@0.0.1920.1047" timestamp="1586623435927" />
     <state x="443" y="251" width="469" height="251" key="ComposerInitDialogKey" timestamp="1585907964173">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="443" y="251" width="469" height="251" key="ComposerInitDialogKey/0.0.1366.728@0.0.1366.728" timestamp="1585907964173" />
-    <state width="1874" height="276" key="GridCell.Tab.0.bottom" timestamp="1586159029595">
+    <state width="1874" height="276" key="GridCell.Tab.0.bottom" timestamp="1586619832871">
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state width="1304" height="159" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585908012870" />
-    <state width="1874" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1047@0.0.1920.1047" timestamp="1586159029595" />
-    <state width="1874" height="276" key="GridCell.Tab.0.center" timestamp="1586159029593">
+    <state width="1874" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1047@0.0.1920.1047" timestamp="1586619832871" />
+    <state width="1874" height="276" key="GridCell.Tab.0.center" timestamp="1586619832869">
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state width="1304" height="159" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585908012866" />
-    <state width="1874" height="276" key="GridCell.Tab.0.center/0.0.1920.1047@0.0.1920.1047" timestamp="1586159029593" />
-    <state width="1874" height="276" key="GridCell.Tab.0.left" timestamp="1586159029592">
+    <state width="1874" height="276" key="GridCell.Tab.0.center/0.0.1920.1047@0.0.1920.1047" timestamp="1586619832869" />
+    <state width="1874" height="276" key="GridCell.Tab.0.left" timestamp="1586619832868">
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state width="1304" height="159" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585908012864" />
-    <state width="1874" height="276" key="GridCell.Tab.0.left/0.0.1920.1047@0.0.1920.1047" timestamp="1586159029592" />
-    <state width="1874" height="276" key="GridCell.Tab.0.right" timestamp="1586159029594">
+    <state width="1874" height="276" key="GridCell.Tab.0.left/0.0.1920.1047@0.0.1920.1047" timestamp="1586619832868" />
+    <state width="1874" height="276" key="GridCell.Tab.0.right" timestamp="1586619832870">
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state width="1304" height="159" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585908012868" />
-    <state width="1874" height="276" key="GridCell.Tab.0.right/0.0.1920.1047@0.0.1920.1047" timestamp="1586159029594" />
+    <state width="1874" height="276" key="GridCell.Tab.0.right/0.0.1920.1047@0.0.1920.1047" timestamp="1586619832870" />
     <state x="673" y="242" width="564" height="564" key="MultipleFileMergeDialog" timestamp="1585945462049">
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
@@ -274,10 +288,10 @@
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state x="456" y="158" key="SettingsEditor/0.0.1920.1047@0.0.1920.1047" timestamp="1585638109260" />
-    <state x="555" y="259" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1586003856826">
+    <state x="555" y="259" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1586159151524">
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
-    <state x="555" y="259" width="800" height="529" key="Vcs.Push.Dialog.v2/0.0.1920.1047@0.0.1920.1047" timestamp="1586003856826" />
+    <state x="555" y="259" width="800" height="529" key="Vcs.Push.Dialog.v2/0.0.1920.1047@0.0.1920.1047" timestamp="1586159151524" />
     <state x="366" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1585907794397">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -286,10 +300,10 @@
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state x="613" y="141" width="683" height="763" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1047@0.0.1920.1047" timestamp="1586001287367" />
-    <state x="765" y="443" width="390" height="161" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586155535821">
+    <state x="765" y="443" width="390" height="161" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586619051468">
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
-    <state x="765" y="443" width="390" height="161" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1047@0.0.1920.1047" timestamp="1586155535821" />
+    <state x="765" y="443" width="390" height="161" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1047@0.0.1920.1047" timestamp="1586619051468" />
     <state x="857" y="256" width="646" height="532" key="ftp.server.browser" timestamp="1582920691343">
       <screen x="0" y="0" width="1920" height="1047" />
     </state>

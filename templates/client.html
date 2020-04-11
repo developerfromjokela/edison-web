@@ -87,6 +87,48 @@
             </md-tab>
             <md-tab label="{{'all_cards' | translate}}">
                 <md-content class="md-padding" md-flex>
+                    <div layout-align="center center" ng-repeat="category in categories">
+                        <h2>{{ category.title }}</h2>
+                        <div class="grid-container grid-container--fill" style="grid-auto-rows: 1fr">
+                            <md-card class="grid-element" md-ink-ripple
+                                     ng-click="openCard(card)"
+                                     ng-repeat="card in getCategoryCards(category)"
+                                     style="cursor: pointer; width: 100px; border-radius: 4px 4px 4px 4px; text-align: center; position: relative;"
+                                     tabindex="0">
+
+                                <md-card-content layout-align="center center">
+                                    <div class="md-media-lg card-media"><img src="{{getThumbnail(card)}}"
+                                                                             style="max-width: 50px; user-select: none; object-fit: cover;">
+                                    </div>
+                                    <span class="md-body-1"
+                                          style="text-overflow: clip; overflow: hidden; word-break: break-word;">{{card.translated_title}}</span>
+                                </md-card-content>
+                                <div flex=""></div>
+                                <div style="height: 6px; border-radius: 0 0 4px 4px; background-color: {{ edisonColorToCode(category.color || 'grey') }}"></div>
+                            </md-card>
+                        </div>
+                    </div>
+                    <div layout-align="center center">
+                        <h2>{{ 'others_category' | translate }}</h2>
+                        <div class="grid-container grid-container--fill" style="grid-auto-rows: 1fr">
+                            <md-card class="grid-element" md-ink-ripple
+                                     ng-click="openCard(card)"
+                                     ng-repeat="card in getCategoryCards(null)"
+                                     style="cursor: pointer; width: 100px; border-radius: 4px 4px 4px 4px; text-align: center; position: relative;"
+                                     tabindex="0">
+
+                                <md-card-content layout-align="center center">
+                                    <div class="md-media-lg card-media"><img src="{{getThumbnail(card)}}"
+                                                                             style="max-width: 50px; user-select: none; object-fit: cover;">
+                                    </div>
+                                    <span class="md-body-1"
+                                          style="text-overflow: clip; overflow: hidden; word-break: break-word;">{{card.translated_title}}</span>
+                                </md-card-content>
+                                <div flex=""></div>
+                                <div style="height: 6px; border-radius: 0 0 4px 4px; background-color: {{ edisonColorToCode(category.color || 'grey') }}"></div>
+                            </md-card>
+                        </div>
+                    </div>
 
                 </md-content>
             </md-tab>

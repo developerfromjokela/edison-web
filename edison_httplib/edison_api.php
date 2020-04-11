@@ -71,6 +71,40 @@ class EdisonApi
 
     }
 
+    public function getCategories()
+    {
+        $response = $this->client->get("dreamcards/category/?format=json", ['cookies' => $this->getSessionJar()]);
+        $statuscode = $response->getStatusCode();
+        $json = json_decode($response->getBody(), true);
+        if (is_array($json)) {
+            if ($statuscode == 200) {
+                return $json;
+            } else
+                apiError($response->getStatusCode(), "Edison rajapintavirhe: " . $json['detail']);
+        } else {
+            apiError(500, "JSON tekstiä ei voitu jäsentää! " . $response->getBody());
+        }
+
+
+    }
+
+    public function getCategory($id)
+    {
+        $response = $this->client->get("dreamcards/category/" . $id . "/?format=json", ['cookies' => $this->getSessionJar()]);
+        $statuscode = $response->getStatusCode();
+        $json = json_decode($response->getBody(), true);
+        if (is_array($json)) {
+            if ($statuscode == 200) {
+                return $json;
+            } else
+                apiError($response->getStatusCode(), "Edison rajapintavirhe: " . $json['detail']);
+        } else {
+            apiError(500, "JSON tekstiä ei voitu jäsentää! " . $response->getBody());
+        }
+
+
+    }
+
     public function getPage($pageId)
     {
         $response = $this->client->get("dreamcards/page/" . $pageId . "/?format=json", ['cookies' => $this->getSessionJar()]);
