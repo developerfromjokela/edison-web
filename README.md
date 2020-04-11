@@ -16,7 +16,7 @@ Features missing:
 - Courses page
 
 ## Requirements
-- A Web server i.e. apache (I recommend installing apache, note that PhpStorm comes pre-installed with it)
+- A Web server i.e. apache (I recommend installing apache, note that PhpStorm comes pre-installed with a web-server, so you wouln't need to install for development purposes)
 - PHP >7.0
 - Composer installed
 
