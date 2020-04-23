@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c47f6834-4708-46d7-a79b-a44ae8d1482e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/v1/desktop/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/desktop/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edison_httplib/edison_api.php" beforeDir="false" afterPath="$PROJECT_DIR$/edison_httplib/edison_api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/head.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/i18n/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/i18n/en.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/i18n/fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/i18n/fi.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/client.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +61,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -79,18 +76,18 @@
     <property name="settings.editor.selected.configurable" value="copyright.profiles" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/api/v1" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/api" />
-      <recent name="$PROJECT_DIR$/api/pbf" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/api/v1/desktop/pages/delete" />
       <recent name="$PROJECT_DIR$/api/v1/desktop/pages" />
       <recent name="$PROJECT_DIR$/api/v1/desktop/wilma" />
       <recent name="$PROJECT_DIR$/api/v1/desktop/cards" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api/v1" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/api" />
+      <recent name="$PROJECT_DIR$/api/pbf" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Built-in Web Server.Unnamed">
@@ -151,7 +148,15 @@
       <workItem from="1586003984437" duration="6000" />
       <workItem from="1586155525051" duration="3603000" />
       <workItem from="1586172436219" duration="22000" />
-      <workItem from="1586619049758" duration="2908000" />
+      <workItem from="1586619049758" duration="4664000" />
+      <workItem from="1586683067825" duration="8000" />
+      <workItem from="1586844679771" duration="1169000" />
+      <workItem from="1586848881026" duration="7000" />
+      <workItem from="1586939235033" duration="18000" />
+      <workItem from="1587017263882" duration="22000" />
+      <workItem from="1587017316637" duration="12000" />
+      <workItem from="1587018833805" duration="48000" />
+      <workItem from="1587668192511" duration="4439000" />
     </task>
     <task id="LOCAL−00001" summary="Implemented Wilma Authentication for Wilma Cards&#10;Implemented Card clicking">
       <created>1585928167425</created>
@@ -177,11 +182,17 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1586159150054</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL−00005" summary="Implemented &quot;All Cards&quot; page&#10;API is now retrieving categories">
+      <created>1586623448043</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1586623448043</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
     <option name="UPDATE_COPYRIGHT" value="true" />
@@ -194,7 +205,8 @@
     <MESSAGE value="Implemented APIs for adding and deleting pages" />
     <MESSAGE value="Implemented pages adding and deleting in the UI" />
     <MESSAGE value="Added a error listener for the refresh method&#10;Decreased the timeout" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a error listener for the refresh method&#10;Decreased the timeout" />
+    <MESSAGE value="Implemented &quot;All Cards&quot; page&#10;API is now retrieving categories" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented &quot;All Cards&quot; page&#10;API is now retrieving categories" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -246,35 +258,35 @@
     </state>
     <state x="509" y="284" width="370" height="274" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1585908516849" />
     <state x="716" y="409" width="477" height="228" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1047@0.0.1920.1047" timestamp="1585638113822" />
-    <state x="399" y="0" width="1018" height="825" key="CommitChangelistDialog2" timestamp="1586623435927">
+    <state x="399" y="0" width="1018" height="825" key="CommitChangelistDialog2" timestamp="1586623447938">
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state x="284" y="0" width="788" height="726" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585913031405" />
-    <state x="399" y="0" width="1018" height="825" key="CommitChangelistDialog2/0.0.1920.1047@0.0.1920.1047" timestamp="1586623435927" />
+    <state x="399" y="0" width="1018" height="825" key="CommitChangelistDialog2/0.0.1920.1047@0.0.1920.1047" timestamp="1586623447938" />
     <state x="443" y="251" width="469" height="251" key="ComposerInitDialogKey" timestamp="1585907964173">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="443" y="251" width="469" height="251" key="ComposerInitDialogKey/0.0.1366.728@0.0.1366.728" timestamp="1585907964173" />
-    <state width="1874" height="276" key="GridCell.Tab.0.bottom" timestamp="1586619832871">
+    <state width="1874" height="276" key="GridCell.Tab.0.bottom" timestamp="1587668366804">
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state width="1304" height="159" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585908012870" />
-    <state width="1874" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1047@0.0.1920.1047" timestamp="1586619832871" />
-    <state width="1874" height="276" key="GridCell.Tab.0.center" timestamp="1586619832869">
+    <state width="1874" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1047@0.0.1920.1047" timestamp="1587668366804" />
+    <state width="1874" height="276" key="GridCell.Tab.0.center" timestamp="1587668366801">
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state width="1304" height="159" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585908012866" />
-    <state width="1874" height="276" key="GridCell.Tab.0.center/0.0.1920.1047@0.0.1920.1047" timestamp="1586619832869" />
-    <state width="1874" height="276" key="GridCell.Tab.0.left" timestamp="1586619832868">
+    <state width="1874" height="276" key="GridCell.Tab.0.center/0.0.1920.1047@0.0.1920.1047" timestamp="1587668366801" />
+    <state width="1874" height="276" key="GridCell.Tab.0.left" timestamp="1587668366800">
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state width="1304" height="159" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585908012864" />
-    <state width="1874" height="276" key="GridCell.Tab.0.left/0.0.1920.1047@0.0.1920.1047" timestamp="1586619832868" />
-    <state width="1874" height="276" key="GridCell.Tab.0.right" timestamp="1586619832870">
+    <state width="1874" height="276" key="GridCell.Tab.0.left/0.0.1920.1047@0.0.1920.1047" timestamp="1587668366800" />
+    <state width="1874" height="276" key="GridCell.Tab.0.right" timestamp="1587668366803">
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state width="1304" height="159" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585908012868" />
-    <state width="1874" height="276" key="GridCell.Tab.0.right/0.0.1920.1047@0.0.1920.1047" timestamp="1586619832870" />
+    <state width="1874" height="276" key="GridCell.Tab.0.right/0.0.1920.1047@0.0.1920.1047" timestamp="1587668366803" />
     <state x="673" y="242" width="564" height="564" key="MultipleFileMergeDialog" timestamp="1585945462049">
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
@@ -288,10 +300,10 @@
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
     <state x="456" y="158" key="SettingsEditor/0.0.1920.1047@0.0.1920.1047" timestamp="1585638109260" />
-    <state x="555" y="259" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1586159151524">
+    <state x="555" y="259" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1586623449383">
       <screen x="0" y="0" width="1920" height="1047" />
     </state>
-    <state x="555" y="259" width="800" height="529" key="Vcs.Push.Dialog.v2/0.0.1920.1047@0.0.1920.1047" timestamp="1586159151524" />
+    <state x="555" y="259" width="800" height="529" key="Vcs.Push.Dialog.v2/0.0.1920.1047@0.0.1920.1047" timestamp="1586623449383" />
     <state x="366" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1585907794397">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

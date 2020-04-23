@@ -50,7 +50,9 @@
             }
 
         </style>
-        <md-tabs md-dynamic-height md-swipe-content ng-show="cardsLoaded" style="background-color: white">
+
+        <md-tabs md-dynamic-height md-selected="currentTab" md-swipe-content ng-show="cardsLoaded"
+                 style="background-color: white">
             <md-tab data-page-id="{{page.id}}" ng-repeat="page in pages">
                 <md-tab-label>
                     <dummy ng-right-click="openPageActions(page)" style="height: 100%; display: inline-block;">
@@ -76,16 +78,35 @@
                                 <div flex=""></div>
                                 <div style="height: 6px; border-radius: 0 0 4px 4px; background-color: {{ edisonColorToCode(getCard(card).category.color || 'grey') }}"></div>
                             </md-card>
+                            <md-card class="grid-element" md-ink-ripple
+                                     ng-click="openCardSelector(page)"
+                                     style="cursor: pointer; width: 100px; border-radius: 4px 4px 4px 4px; text-align: center; position: relative;"
+                                     tabindex="0">
+
+                                <md-card-content layout-align="center center">
+                                    <div class="md-media-lg card-media">
+                                        <md-icon md-font-set="md"
+                                                 style="width: 50px; height: 50px; font-size: 40px; user-select: none; object-fit: cover;">
+                                            add
+                                        </md-icon>
+                                    </div>
+                                    <span class="md-body-1"
+                                          style="text-overflow: clip; overflow: hidden; word-break: break-word;">{{'add_card' | translate}}</span>
+                                </md-card-content>
+                                <div flex=""></div>
+                                <div style="height: 6px; border-radius: 0 0 4px 4px; background-color: #5a5a5a"></div>
+                            </md-card>
                         </div>
                         <div layout-align="center center" layout-fill ng-show="!page.cards.length"
                              style="text-align: center; height: 120px;">
                             <h3>{{'no_cards' | translate}}</h3>
                             <span>{{'add_card_hint' | translate}}</span>
                         </div>
+
                     </md-content>
                 </md-tab-body>
             </md-tab>
-            <md-tab label="{{'all_cards' | translate}}">
+            <md-tab id="edison-all-cards-tab" label="{{'all_cards' | translate}}">
                 <md-content class="md-padding" md-flex>
                     <div layout-align="center center" ng-repeat="category in categories">
                         <h2>{{ category.title }}</h2>
@@ -95,7 +116,10 @@
                                      ng-repeat="card in getCategoryCards(category)"
                                      style="cursor: pointer; width: 100px; border-radius: 4px 4px 4px 4px; text-align: center; position: relative;"
                                      tabindex="0">
-
+                                <md-tooltip
+                                        md-direction="bottom">
+                                    {{'add_card_tooltip' | translate}}
+                                </md-tooltip>
                                 <md-card-content layout-align="center center">
                                     <div class="md-media-lg card-media"><img src="{{getThumbnail(card)}}"
                                                                              style="max-width: 50px; user-select: none; object-fit: cover;">
@@ -116,6 +140,10 @@
                                      ng-repeat="card in getCategoryCards(null)"
                                      style="cursor: pointer; width: 100px; border-radius: 4px 4px 4px 4px; text-align: center; position: relative;"
                                      tabindex="0">
+                                <md-tooltip
+                                        md-direction="bottom">
+                                    {{'add_card_tooltip' | translate}}
+                                </md-tooltip>
 
                                 <md-card-content layout-align="center center">
                                     <div class="md-media-lg card-media"><img src="{{getThumbnail(card)}}"
@@ -133,8 +161,6 @@
                 </md-content>
             </md-tab>
         </md-tabs>
-
-
     </md-content>
 
 

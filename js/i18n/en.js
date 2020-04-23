@@ -35,9 +35,11 @@ var en_lang = {
     "page_placeholder": "🤔",
     "adding_page": "Adding new page",
     "delete": "Delete",
-    "delete_page_warning": "Are you sure to delete the page",
+    "delete_page_warning": "Are you sure to delete this page?",
     "deleting_page": "Deleting page",
     "no_cards": "No cards here",
     "add_card_hint": "Click + to add a card",
-    "others_category": "Other cards"
+    "others_category": "Other cards",
+    "add_card": "Add a card",
+    "add_card_tooltip": "Right click to add this card to a desktop"
 };

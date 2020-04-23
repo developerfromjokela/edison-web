@@ -8,6 +8,8 @@
         var edisonURL = "<?php echo EDISON_BASEPATH ?>";
         var serverYear = "<?php echo date("Y")?>";
     </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <?php
     setDependencies(HEAD_DEPENDENCIES);

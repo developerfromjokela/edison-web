@@ -339,17 +339,18 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
                         .ok($translate.instant('ok'));
                     $mdDialog.show(unknownError);
                 }
-            });
+                });
         }
     }
 
 
-}).controller('main',  function ($scope, $mdThemingProvider, $http, $location) {
+}).controller('main', function ($scope, $mdThemingProvider, $http, $location) {
     $mdThemingProvider.setDefaultTheme('default');
     checkSession($location, false);
 
-}).controller('client',  function ($scope, $mdThemingProvider, $http, $location, $mdDialog, $translate) {
+}).controller('client', function ($scope, $mdThemingProvider, $http, $location, $mdDialog, $mdBottomSheet, $translate) {
     $mdThemingProvider.setDefaultTheme('default');
+
     $scope.cardsLoaded = false;
     $scope.offlineMode = false;
     var cardMap = new Map();
@@ -479,6 +480,11 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
         });
         return cards;
     };
+
+    $scope.openCardSelector = function (page) {
+        $scope.currentTab = $scope.pages.length
+    };
+
 
     function refreshDesktop(first = true) {
         if (!first)

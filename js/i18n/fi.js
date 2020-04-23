@@ -39,5 +39,8 @@ var fi_lang = {
     "deleting_page": "Poistetaan työpöytää",
     "no_cards": "Täällä ei ole kortteja",
     "add_card_hint": "Klikkaa + lisätäksesi kortin",
-    "others_category": "Muut kortit"
+    "others_category": "Muut kortit",
+    "add_card": "Lisää kortti",
+    "add_card_tooltip": "Lisää tämä kortti työpöydälle painamalla hiiren oikealla painikkeella"
+
 };
