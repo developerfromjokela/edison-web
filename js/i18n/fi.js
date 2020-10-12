@@ -45,7 +45,9 @@ var fi_lang = {
     "try_again": "Yritä uudelleen",
     "rpc_error": "Yhteys RPC palvelimeen katkesi. Tarkista internet-yhteytesi ja yritä uudelleen.",
     "login_failed_mobile": "Kirjautuminen puhelimen kautta epäonnistui",
-    "login_failed_mobile_msg": "Puhelimesi vaikuttaa olevan kirjautunut ulos Edisonista. Kokeile kirjauta uudelleen ja yritä uudelleen."
+    "login_failed_mobile_msg": "Puhelimesi vaikuttaa olevan kirjautunut ulos Edisonista. Kokeile kirjauta uudelleen ja yritä uudelleen.",
+    "logout_title": "Kirjaudu ulos?",
+    "logout_msg": "Oletko varma?"
 
 
 };

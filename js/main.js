@@ -3,9 +3,9 @@
  * @author Developer From Jokela
  */
 
-var version = "1.0.2-alpha";
+var version = "1.0.5-alpha";
 var rpcURl = "wss://developerfromjokela.com/edisonrpc/";
-var debug = true;
+var debug = false;
 
 
 function lowercase(string) {
@@ -255,21 +255,12 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
     }
     var options = [
         {icon: 'smartphone', src: '', title: 'login_phone', onclick: function () {
-                if (!debug) {
-                    $mdDialog.show($mdDialog.alert()
-                        .title($translate.instant("not_implemented_yet"))
-                        .textContent($translate.instant("not_implemented_yet_msg"))
-                        .ok($translate.instant("ok")));
-                } else {
-                    $mdDialog.show({
-                        controller: DialogController,
-                        templateUrl: baseURL + 'templates/edison_login.html',
-                        parent: angular.element(document.body),
-                        clickOutsideToClose: true,
-                    }).then(function (answer) {
-
-                    });
-                }
+                $mdDialog.show({
+                    controller: DialogController,
+                    templateUrl: baseURL + 'templates/edison_login.html',
+                    parent: angular.element(document.body),
+                    clickOutsideToClose: true,
+                });
             }},
         {icon: 'vpn_key', src: '', title: 'login_session', onclick: function () {
                 var confirm = $mdDialog.prompt()
@@ -301,7 +292,7 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
         var keys;
 
         edisonRpc.onerror = function () {
-            console.log("ERROR!");
+            log("ERROR!");
             $scope.error = {
                 detail: $translate.instant('rpc_error'),
                 callback: function () {
@@ -312,7 +303,7 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
         }
         edisonRpc.onopen = function () {
             $scope.rpcConnect = true;
-            console.log("opened!");
+            log("opened!");
             qrcode = new QRCode(document.getElementById("qrcode_container"), {
                 text: "",
                 height: 1024,
@@ -366,17 +357,17 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
             var content = event.data;
             try {
                 var contentJSON = JSON.parse(content);
-                console.log(contentJSON);
+                log(contentJSON);
                 if (contentJSON.type === "action") {
                     if (contentJSON.action === "authentication") {
-                        console.log("initing");
+                        log("initing");
                         edisonRpc.send(JSON.stringify({"action": "init", "type": "webclient"}));
                     } else if (contentJSON.action === "loginIdChange") {
-                        console.log("changing loginID");
+                        log("changing loginID");
                         $scope.rpcInit = false;
                         $scope.$apply();
                         generateRSAKeys(function (e) {
-                            console.log(e);
+                            log(e);
                             keys = e.keys;
                             var pubKey = e.public;
                             edisonRpc.send(JSON.stringify({'action': 'keylink', 'key': pubKey}))
@@ -388,8 +379,8 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
                         edisonRpc.send(JSON.stringify({'action': 'data_transfer_complete', 'uuid': uuid}));
                     } else if (contentJSON.action === "data_transfer_complete") {
                         decryptRSAMessage(data, keys, function (session) {
-                            console.log("DATA: ");
-                            console.log(session);
+                            log("DATA: ");
+                            log(session);
                             validateSession(session);
                         });
                     } else if (contentJSON.action === "keyRegistered") {
@@ -507,8 +498,19 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
     };
     $scope.edisonColorToCode = edisonColorToCode;
     $scope.logout = function () {
-        clearAuthentication();
-        checkSession($location, false);
+        var logoutConfirm = $mdDialog.confirm()
+            .title($translate.instant('logout_title'))
+            .textContent($translate.instant('logout_msg'))
+            .ariaLabel('logout')
+            .ok($translate.instant('logout'))
+            .cancel($translate.instant('cancel'));
+
+        $mdDialog.show(logoutConfirm).then(function () {
+            clearAuthentication();
+            checkSession($location, false);
+        }, function () {
+        });
+
     };
     checkSession($location, false);
     var offlineData = getOfflineData();

@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c47f6834-4708-46d7-a79b-a44ae8d1482e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/js/crypto/forge.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/dependencies.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/dependencies.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edison_httplib/edison_authapi.php" beforeDir="false" afterPath="$PROJECT_DIR$/edison_httplib/edison_authapi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/crypto/cryptico.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/crypto/cryptico.min.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/js/i18n/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/i18n/en.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/i18n/fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/i18n/fi.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
@@ -184,7 +179,7 @@
       <workItem from="1588847983764" duration="3000" />
       <workItem from="1591950875818" duration="10000" />
       <workItem from="1602434442561" duration="9951000" />
-      <workItem from="1602487845992" duration="12502000" />
+      <workItem from="1602487845992" duration="12855000" />
     </task>
     <task id="LOCAL−00001" summary="Implemented Wilma Authentication for Wilma Cards&#10;Implemented Card clicking">
       <created>1585928167425</created>
@@ -228,7 +223,13 @@
       <option name="presentableId" value="LOCAL−00007" />
       <updated>1602487953558</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL−00008" summary="Login via your phone is done, after hard work, end result is phenomenal!">
+      <created>1602516277658</created>
+      <option name="number" value="LOCAL−00008" />
+      <option name="presentableId" value="LOCAL−00008" />
+      <updated>1602516277658</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,7 +250,8 @@
     <MESSAGE value="Started integrating card adding" />
     <MESSAGE value="Started integrating card adding by making these changes:&#10;- Added &quot;Add a card&quot; card on each page&#10;- On &quot;All cards&quot; page, added a tooltip when hovering any card&#10;&#10;Adding a card should be as simple as right clicking the card in &quot;All cards&quot; page, when it will be implemented" />
     <MESSAGE value="Started integrating login via mobile app using WebSockets" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started integrating login via mobile app using WebSockets" />
+    <MESSAGE value="Login via your phone is done, after hard work, end result is phenomenal!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login via your phone is done, after hard work, end result is phenomenal!" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -258,10 +260,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="0" y="0" width="1910" height="1038" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602505426327" />
-    <state x="321" y="50" width="1268" height="938" key="CommitChangelistDialog2" timestamp="1602487953228">
+    <state x="321" y="50" width="1268" height="938" key="CommitChangelistDialog2" timestamp="1602516277490">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="321" y="50" width="1268" height="938" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602487953228" />
+    <state x="321" y="50" width="1268" height="938" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602516277490" />
     <state width="1878" height="275" key="GridCell.Tab.0.bottom" timestamp="1602503468982">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -278,10 +280,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1878" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602503468982" />
-    <state x="555" y="256" width="800" height="526" key="Vcs.Push.Dialog.v2" timestamp="1602487955311">
+    <state x="555" y="256" width="800" height="526" key="Vcs.Push.Dialog.v2" timestamp="1602516278924">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="555" y="256" width="800" height="526" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602487955311" />
+    <state x="555" y="256" width="800" height="526" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602516278924" />
     <state x="624" y="237" key="run.anything.popup" timestamp="1602515201978">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

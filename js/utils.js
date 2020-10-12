@@ -92,15 +92,15 @@ function generateRSAKeys(callback) {
 
 function decryptRSAMessage(msg, key, callback) {
     try {
-        console.log("decryping")
-        console.log("start!");
-        console.log(key);
+        log("decryping")
+        log("start!");
+        log(key);
         var privkey = key.privateKey;
         var decoded = forge.util.decode64(msg);
         var decrypted = privkey.decrypt(decoded);
         callback(decrypted)
     } catch (e) {
-        console.log(e);
+        log(e);
     }
 
 }
@@ -110,15 +110,15 @@ function decryptRSAMessage(msg, key, callback) {
 
 
     var worker1 = new Worker(getScriptPath(function () {
-        console.log("run decryptor!");
+        log("run decryptor!");
 
         self.addEventListener('message', function (e) {
-            console.log("start");
+            log("start");
             importScripts("/crypto/forge.min.js");
             var rsa = forge.pki.rsa;
             var decrypted = e.data.key.privateKey.decrypt(atob(e.data.msg), 'RSA');
             self.postMessage({'result': decrypted});
-            console.log("end");
+            log("end");
         }, false);
     }));
     worker1.addEventListener('message', function (e) {
@@ -132,16 +132,16 @@ function decryptRSAMessage(msg, key, callback) {
 
 
     var worker1 = new Worker(getScriptPath(function () {
-        console.log("run decryptor!");
+        log("run decryptor!");
 
         self.addEventListener('message', function (e) {
             var window = e.data.window;
-            console.log("start");
+            log("start");
             var crypt = new JSEncrypt({default_key_size: keysize});
             crypt.setKey(e.data.key);
             var decrypted = crypt.decrypt(e.data.msg);
             self.postMessage({'result': decrypted});
-            console.log("end");
+            log("end");
         }, false);
     }));
     worker1.addEventListener('message', function (e) {

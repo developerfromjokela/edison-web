@@ -45,5 +45,7 @@ var en_lang = {
     "try_again": "Try again",
     "rpc_error": "Could not connect to RPC server. Please check your internet connection and try again",
     "login_failed_mobile": "Sign-in via phone failed",
-    "login_failed_mobile_msg": "Your phone seems to been signed out of Edison. Please try logging in to your phone and try again."
+    "login_failed_mobile_msg": "Your phone seems to been signed out of Edison. Please try logging in to your phone and try again.",
+    "logout_title": "Sign out?",
+    "logout_msg": "Are you sure?"
 };
