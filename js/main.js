@@ -4,7 +4,7 @@
  */
 
 var version = "1.0.2-alpha";
-var rpcURl = "ws://127.0.0.1:4551";
+var rpcURl = "wss://developerfromjokela.com/edisonrpc/";
 var debug = true;
 
 
@@ -234,10 +234,12 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
     $mdThemingProvider.setDefaultTheme('login');
     checkSession($location, false);
     $scope.baseURL = baseURL;
-    function validateSession(session) {
+
+    function validateSession(session, mobile = false) {
         $mdDialog.show({
             controller: SessionCheckController,
             locals: {
+                'mobile': mobile,
                 'session': session,
                 'callback': function (csrf) {
                     log(csrf);
@@ -287,7 +289,7 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
     $scope.options = [].concat(options);
 
 
-    function DialogController($scope, $mdDialog) {
+    function DialogController($scope, $mdDialog, $http) {
 
         $scope.rpcInit = false;
         $scope.rpcConnect = false;
@@ -326,14 +328,39 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
             qrcode.makeCode(content);
         }
 
-        var async = function (func) {
-            return function () {
-                var args = arguments;
-                setTimeout(function () {
-                    func.apply(this, args);
-                }, 0);
-            };
-        };
+        function login(data, callback) {
+            $http.post(baseURL + "api/v1/session/csrf_token/", {
+                "session": data
+            })
+                .then(function (response) {
+                    if (response.data.status === true) {
+                        callback(response.data);
+                    } else {
+                        var unknownError = $mdDialog.alert()
+                            .title($translate.instant('error_occurred'))
+                            .textContent(response.data.cause)
+                            .ok($translate.instant('ok'));
+                        $mdDialog.show(unknownError);
+                    }
+                }, function errorCallback(response) {
+                    if (response.status === 401) {
+                        var error = $mdDialog.alert()
+                            .title($translate.instant((!$scope.mobile) ? 'wrong_session' : 'login_failed_mobile'))
+                            .textContent($translate.instant((!$scope.mobile) ? 'wrong_session_msg' : 'login_failed_mobile_msg'))
+                            .ok($translate.instant('ok'));
+                        $mdDialog.show(error);
+                    } else {
+                        var unknownError = $mdDialog.alert()
+                            .title($translate.instant('error_occurred'))
+                            .textContent(response.data.cause)
+                            .ok($translate.instant('ok'));
+                        $mdDialog.show(unknownError);
+                    }
+                });
+
+        }
+
+        var data;
 
         edisonRpc.onmessage = function (event) {
             var content = event.data;
@@ -347,21 +374,23 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
                     } else if (contentJSON.action === "loginIdChange") {
                         console.log("changing loginID");
                         $scope.rpcInit = false;
-                        $scope.$apply()
-                        var worker1 = getCryptoWorker(function (e) {
+                        $scope.$apply();
+                        generateRSAKeys(function (e) {
                             console.log(e);
                             keys = e.keys;
                             var pubKey = e.public;
                             edisonRpc.send(JSON.stringify({'action': 'keylink', 'key': pubKey}))
                         });
-                        worker1.postMessage(null);
                     } else if (contentJSON.action === "data_transfer") {
-                        var data = contentJSON.data;
+                        var trData = contentJSON.data;
                         var uuid = contentJSON.uuid;
+                        data = trData;
                         edisonRpc.send(JSON.stringify({'action': 'data_transfer_complete', 'uuid': uuid}));
-                        decryptRSAMessage(data, keys, function (data) {
+                    } else if (contentJSON.action === "data_transfer_complete") {
+                        decryptRSAMessage(data, keys, function (session) {
                             console.log("DATA: ");
-                            console.log(data);
+                            console.log(session);
+                            validateSession(session);
                         });
                     } else if (contentJSON.action === "keyRegistered") {
                         var loginID = contentJSON.loginId;
@@ -392,10 +421,6 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
         $scope.cancel = function () {
             $mdDialog.cancel();
             edisonRpc.close();
-        };
-
-        $scope.answer = function (answer) {
-
         };
     }
 
@@ -428,8 +453,8 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
                     }, function errorCallback(response) {
                 if (response.status === 401) {
                     var error = $mdDialog.alert()
-                        .title($translate.instant('wrong_session'))
-                        .textContent($translate.instant('wrong_session_msg'))
+                        .title($translate.instant((!$scope.mobile) ? 'wrong_session' : 'login_failed_mobile'))
+                        .textContent($translate.instant((!$scope.mobile) ? 'wrong_session_msg' : 'login_failed_mobile_msg'))
                         .ok($translate.instant('ok'));
                     $mdDialog.show(error);
                 } else {

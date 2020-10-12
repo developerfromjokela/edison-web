@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c47f6834-4708-46d7-a79b-a44ae8d1482e" name="Default Changelist" comment="Started integrating card adding by making these changes:&#10;- Added &quot;Add a card&quot; card on each page&#10;- On &quot;All cards&quot; page, added a tooltip when hovering any card&#10;&#10;Adding a card should be as simple as right clicking the card in &quot;All cards&quot; page, when it will be implemented">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/crypto/cryptico.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/crypto/cryptico.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/qrcode.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/qrcode.min.js" afterDir="false" />
+    <list default="true" id="c47f6834-4708-46d7-a79b-a44ae8d1482e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/js/crypto/forge.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/dependencies.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/dependencies.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edison_httplib/edison_authapi.php" beforeDir="false" afterPath="$PROJECT_DIR$/edison_httplib/edison_authapi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/crypto/cryptico.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/crypto/cryptico.min.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/js/i18n/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/i18n/en.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/i18n/fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/i18n/fi.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/edison_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/edison_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +74,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api/v1/session/csrf_token/raw" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -87,22 +84,23 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="copyright.profiles" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/api/v1/desktop/pages/delete" />
-      <recent name="$PROJECT_DIR$/api/v1/desktop/pages" />
-      <recent name="$PROJECT_DIR$/api/v1/desktop/wilma" />
-      <recent name="$PROJECT_DIR$/api/v1/desktop/cards" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/api/v1" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/api" />
       <recent name="$PROJECT_DIR$/api/pbf" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api/v1/session/csrf_token/raw" />
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/api/v1/desktop/pages/delete" />
+      <recent name="$PROJECT_DIR$/api/v1/desktop/pages" />
+      <recent name="$PROJECT_DIR$/api/v1/desktop/wilma" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Built-in Web Server.Unnamed">
@@ -186,6 +184,7 @@
       <workItem from="1588847983764" duration="3000" />
       <workItem from="1591950875818" duration="10000" />
       <workItem from="1602434442561" duration="9951000" />
+      <workItem from="1602487845992" duration="12502000" />
     </task>
     <task id="LOCAL−00001" summary="Implemented Wilma Authentication for Wilma Cards&#10;Implemented Card clicking">
       <created>1585928167425</created>
@@ -223,7 +222,13 @@
       <option name="presentableId" value="LOCAL−00006" />
       <updated>1587672768864</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL−00007" summary="Started integrating login via mobile app using WebSockets">
+      <created>1602487953558</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1602487953558</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,30 +248,43 @@
     <MESSAGE value="Implemented &quot;All Cards&quot; page&#10;API is now retrieving categories" />
     <MESSAGE value="Started integrating card adding" />
     <MESSAGE value="Started integrating card adding by making these changes:&#10;- Added &quot;Add a card&quot; card on each page&#10;- On &quot;All cards&quot; page, added a tooltip when hovering any card&#10;&#10;Adding a card should be as simple as right clicking the card in &quot;All cards&quot; page, when it will be implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started integrating card adding by making these changes:&#10;- Added &quot;Add a card&quot; card on each page&#10;- On &quot;All cards&quot; page, added a tooltip when hovering any card&#10;&#10;Adding a card should be as simple as right clicking the card in &quot;All cards&quot; page, when it will be implemented" />
+    <MESSAGE value="Started integrating login via mobile app using WebSockets" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started integrating login via mobile app using WebSockets" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="321" y="50" width="1268" height="938" key="CommitChangelistDialog2" timestamp="1602440302754">
+    <state x="0" y="0" width="1910" height="1038" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602505426327">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="321" y="50" width="1268" height="938" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602440302754" />
-    <state width="1878" height="275" key="GridCell.Tab.0.bottom" timestamp="1602435279060">
+    <state x="0" y="0" width="1910" height="1038" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602505426327" />
+    <state x="321" y="50" width="1268" height="938" key="CommitChangelistDialog2" timestamp="1602487953228">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602435279060" />
-    <state width="1878" height="275" key="GridCell.Tab.0.center" timestamp="1602435279059">
+    <state x="321" y="50" width="1268" height="938" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602487953228" />
+    <state width="1878" height="275" key="GridCell.Tab.0.bottom" timestamp="1602503468982">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602435279059" />
-    <state width="1878" height="275" key="GridCell.Tab.0.left" timestamp="1602435279059">
+    <state width="1878" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602503468982" />
+    <state width="1878" height="275" key="GridCell.Tab.0.center" timestamp="1602503468982">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602435279059" />
-    <state width="1878" height="275" key="GridCell.Tab.0.right" timestamp="1602435279059">
+    <state width="1878" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602503468982" />
+    <state width="1878" height="275" key="GridCell.Tab.0.left" timestamp="1602503468982">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602435279059" />
+    <state width="1878" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602503468982" />
+    <state width="1878" height="275" key="GridCell.Tab.0.right" timestamp="1602503468982">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602503468982" />
+    <state x="555" y="256" width="800" height="526" key="Vcs.Push.Dialog.v2" timestamp="1602487955311">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="555" y="256" width="800" height="526" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602487955311" />
+    <state x="624" y="237" key="run.anything.popup" timestamp="1602515201978">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="624" y="237" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602515201978" />
   </component>
 </project>

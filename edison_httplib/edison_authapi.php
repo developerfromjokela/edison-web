@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * Copyright (c) 2020 EdisonWeb.
  * @author Developer From Jokela
  */
@@ -28,6 +28,7 @@ class EdisonAuthApi
     }
 
     public function getCSRFToken($sessionId) {
+
         $response = $this->client->get("/", ['cookies' => $this->getSessionJar($sessionId)]);
         $statuscode =  $response->getStatusCode();
         if ($statuscode == 200) {

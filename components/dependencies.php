@@ -97,8 +97,8 @@ define("FOOTER_DEPENDENCIES", array(
     ),
     array(
         "type" => "js",
-        "minifyAvailable" => true,
-        "local" => "crypto/cryptico.js",
+        "minifyAvailable" => false,
+        "local" => "crypto/forge.min.js",
     ),
     array(
         "type" => "js",

@@ -43,5 +43,7 @@ var en_lang = {
     "add_card": "Add a card",
     "add_card_tooltip": "Right click to add this card to a desktop",
     "try_again": "Try again",
-    "rpc_error": "Could not connect to RPC server. Please check your internet connection and try again"
+    "rpc_error": "Could not connect to RPC server. Please check your internet connection and try again",
+    "login_failed_mobile": "Sign-in via phone failed",
+    "login_failed_mobile_msg": "Your phone seems to been signed out of Edison. Please try logging in to your phone and try again."
 };
