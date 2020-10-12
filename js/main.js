@@ -4,7 +4,8 @@
  */
 
 var version = "1.0.2-alpha";
-var debug = false;
+var rpcURl = "ws://127.0.0.1:4551";
+var debug = true;
 
 
 function lowercase(string) {
@@ -98,6 +99,7 @@ function PageActionsController($scope, $mdDialog, $translate, $http, page, refre
         });
     };
 }
+
 
 // Angular deprecated the lowercase function as of v1.6.7. TextAngular hasn't
 // updated to reflect this
@@ -284,17 +286,115 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
     ];
     $scope.options = [].concat(options);
 
+
     function DialogController($scope, $mdDialog) {
 
-        $scope.hide = function() {
+        $scope.rpcInit = false;
+        $scope.rpcConnect = false;
+        $scope.error = null;
+
+
+        var edisonRpc = new WebSocket(rpcURl);
+        var qrcode;
+        var keys;
+
+        edisonRpc.onerror = function () {
+            console.log("ERROR!");
+            $scope.error = {
+                detail: $translate.instant('rpc_error'),
+                callback: function () {
+                    edisonRpc.close();
+                    $mdDialog.hide();
+                }
+            };
+        }
+        edisonRpc.onopen = function () {
+            $scope.rpcConnect = true;
+            console.log("opened!");
+            qrcode = new QRCode(document.getElementById("qrcode_container"), {
+                text: "",
+                height: 1024,
+                width: 1024,
+                colorDark: "#ffffff",
+                colorLight: "#00000000",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        }
+
+        function generateQRCode(content) {
+            qrcode.clear();
+            qrcode.makeCode(content);
+        }
+
+        var async = function (func) {
+            return function () {
+                var args = arguments;
+                setTimeout(function () {
+                    func.apply(this, args);
+                }, 0);
+            };
+        };
+
+        edisonRpc.onmessage = function (event) {
+            var content = event.data;
+            try {
+                var contentJSON = JSON.parse(content);
+                console.log(contentJSON);
+                if (contentJSON.type === "action") {
+                    if (contentJSON.action === "authentication") {
+                        console.log("initing");
+                        edisonRpc.send(JSON.stringify({"action": "init", "type": "webclient"}));
+                    } else if (contentJSON.action === "loginIdChange") {
+                        console.log("changing loginID");
+                        $scope.rpcInit = false;
+                        $scope.$apply()
+                        var worker1 = getCryptoWorker(function (e) {
+                            console.log(e);
+                            keys = e.keys;
+                            var pubKey = e.public;
+                            edisonRpc.send(JSON.stringify({'action': 'keylink', 'key': pubKey}))
+                        });
+                        worker1.postMessage(null);
+                    } else if (contentJSON.action === "data_transfer") {
+                        var data = contentJSON.data;
+                        var uuid = contentJSON.uuid;
+                        edisonRpc.send(JSON.stringify({'action': 'data_transfer_complete', 'uuid': uuid}));
+                        decryptRSAMessage(data, keys, function (data) {
+                            console.log("DATA: ");
+                            console.log(data);
+                        });
+                    } else if (contentJSON.action === "keyRegistered") {
+                        var loginID = contentJSON.loginId;
+                        generateQRCode(loginID);
+                        $scope.rpcInit = true;
+                        $scope.$apply()
+                    }
+                }
+
+            } catch (e) {
+                $scope.error = {
+                    detail: e,
+                    callback: function () {
+                        $scope.error = null;
+                        edisonRpc.close();
+                        $mdDialog.hide();
+                    }
+                };
+            }
+        }
+
+
+        $scope.hide = function () {
             $mdDialog.hide();
+            edisonRpc.close();
         };
 
-        $scope.cancel = function() {
+        $scope.cancel = function () {
             $mdDialog.cancel();
+            edisonRpc.close();
         };
 
-        $scope.answer = function(answer) {
+        $scope.answer = function (answer) {
 
         };
     }

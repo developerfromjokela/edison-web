@@ -9,7 +9,7 @@ var en_lang = {
     "login_msg": "Sign in to continue",
     "login_edison": "Sign in via Edison",
     "login_phone": "Sign in with your smartphone",
-    "login_phone_guide": "Open Edison app, and click the Computer Icon and scan the QR Code to sign in",
+    "login_phone_guide": "Use your phone with Edison app to sign in",
     "login": "Sign in",
     "cancel": "Cancel",
     "continue": "Continue",
@@ -41,5 +41,7 @@ var en_lang = {
     "add_card_hint": "Click + to add a card",
     "others_category": "Other cards",
     "add_card": "Add a card",
-    "add_card_tooltip": "Right click to add this card to a desktop"
+    "add_card_tooltip": "Right click to add this card to a desktop",
+    "try_again": "Try again",
+    "rpc_error": "Could not connect to RPC server. Please check your internet connection and try again"
 };

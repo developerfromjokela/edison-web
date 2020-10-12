@@ -3,28 +3,47 @@
   ~ @author Developer From Jokela
   -->
 
-<md-dialog style="width: 70%; height: 70%;">
-        <md-toolbar>
-            <div class="md-toolbar-tools">
-                <h2>{{'login' | translate}}</h2>
-                <span flex></span>
+<md-dialog style="width: 60%; height: 60%;">
+    <!-- <md-toolbar>
+         <div class="md-toolbar-tools">
+             <h2>{{'login_phone' | translate}}</h2>
+             <span flex></span>
+         </div>
+     </md-toolbar>-->
+
+    <md-dialog-content style="width: 100%; height: 100%; overflow: hidden;">
+
+        <div layout-fill ng-show="rpcConnect">
+            <div layout="row" layout-fill layout-margin>
+                <div flex="" layout-fill>
+                    <div layout="column" layout-align="center center" layout-fill>
+                        <div id="qrcode_container" ng-show="rpcInit"
+                             style="width: auto; height: auto; max-height: 450px;"></div>
+                        <div layout="column" layout-align="center center" layout-fill ng-show="!rpcInit">
+                            <md-progress-circular md-diameter="60"></md-progress-circular>
+                        </div>
+                    </div>
+                </div>
+                <div flex="" style="margin-right: 12px;">
+                    <h1>{{'login_phone_guide' | translate}}</h1>
+                    <h3>1. Avaa Edison sovellus</h3>
+                    <h3>2. Paina tietokonekuvaketta</h3>
+                    <h3>3. Skannaa QR Koodi</h3>
+                </div>
             </div>
-        </md-toolbar>
+        </div>
 
-        <md-dialog-content style="width: 100%; height: 100%; overflow: hidden;">
+        <div layout="column" layout-align="center center" layout-fill ng-show="(!rpcConnect && error==null)">
+            <md-progress-circular md-diameter="60"></md-progress-circular>
+        </div>
 
-
-            <div layout="row" layout-margin>
-                <h4 class="md-title" layout-align="center center">{{'login_phone' | translate}}</h4>
-            </div>
-            <div layout="row"layout-margin>
-                <div flex=""><img id="qrcode_container"></div>
-                <div flex="">{{'login_phone_guide' | translate}}</div>
-            </div>
+        <div layout="column" layout-align="center center" layout-fill ng-show="error!=null">
+            <h2>{{'error_occurred' | translate}}</h2>
+            <h3>{{ error.detail }}</h3>
+        </div>
 
 
-
-        </md-dialog-content>
+    </md-dialog-content>
 
         <md-dialog-actions layout="row">
             <span flex></span>

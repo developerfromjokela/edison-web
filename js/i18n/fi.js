@@ -9,7 +9,7 @@ var fi_lang = {
     "login_msg": "Kirjaudu sisään jatkaksesi",
     "login_edison": "Kirjaudu Edisonin kautta",
     "login_phone": "Kirjaudu puhelimen kautta",
-    "login_phone_guide": "Avaa Edison sovellus puhelimellasi, klikkaa tietokone-kuvaketta ja skannaa QR Koodi kirjautuaksesi",
+    "login_phone_guide": "Käytä puhelintasi jossa on Edison sovellus kirjautumiseen",
     "login": "Kirjaudu sisään",
     "cancel": "Peruuta",
     "continue": "Jatka",
@@ -41,6 +41,9 @@ var fi_lang = {
     "add_card_hint": "Klikkaa + lisätäksesi kortin",
     "others_category": "Muut kortit",
     "add_card": "Lisää kortti",
-    "add_card_tooltip": "Lisää tämä kortti työpöydälle painamalla hiiren oikealla painikkeella"
+    "add_card_tooltip": "Lisää tämä kortti työpöydälle painamalla hiiren oikealla painikkeella",
+    "try_again": "Yritä uudelleen",
+    "rpc_error": "Yhteys RPC palvelimeen katkesi. Tarkista internet-yhteytesi ja yritä uudelleen."
+
 
 };

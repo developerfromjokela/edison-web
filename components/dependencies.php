@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * Copyright (c) 2020 EdisonWeb.
  * @author Developer From Jokela
  */
@@ -89,6 +89,16 @@ define("FOOTER_DEPENDENCIES", array(
         "type" => "js",
         "minifyAvailable" => false,
         "local" => "i18n/en.js",
+    ),
+    array(
+        "type" => "js",
+        "minifyAvailable" => true,
+        "local" => "qrcode.js",
+    ),
+    array(
+        "type" => "js",
+        "minifyAvailable" => true,
+        "local" => "crypto/cryptico.js",
     ),
     array(
         "type" => "js",
