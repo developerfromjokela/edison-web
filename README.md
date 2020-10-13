@@ -3,6 +3,8 @@ Material Design Web Client for Edison Desktop
 
 This is the next gen Edison Desktop, I promise you'll see one of these on the offical website some day
 
+[Open Edison Web](https://developerfromjokela.com/edisonweb)
+
 Features included:
 - Viewing, adding and deleting pages
 - Viewing cards
