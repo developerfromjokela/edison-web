@@ -8,11 +8,11 @@ Features included:
 - Viewing cards
 - Logging in via a session cookie
 - Offline data saved into the browser, so if downtimes occur, you can still view your desktop
+- Login via a Android phone using the Edison app
 
 Features missing:
 - Cards adding, sharing, editing, attaching and deleting
 - Pages editing
-- Login via a Android phone using the Edison app
 - Courses page
 
 ## Requirements
