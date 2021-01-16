@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c47f6834-4708-46d7-a79b-a44ae8d1482e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/edison_about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/edison_about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/qrcode.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/qrcode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/edison_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/edison_login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,10 +20,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
         <option value="HTML4 File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -61,7 +62,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DefaultHtmlFileTemplate" value="HTML4 File" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -176,7 +177,22 @@
       <workItem from="1588847983764" duration="3000" />
       <workItem from="1591950875818" duration="10000" />
       <workItem from="1602434442561" duration="9951000" />
-      <workItem from="1602487845992" duration="13802000" />
+      <workItem from="1602487845992" duration="14453000" />
+      <workItem from="1602532584314" duration="98000" />
+      <workItem from="1602600642589" duration="3594000" />
+      <workItem from="1602659518113" duration="152000" />
+      <workItem from="1602689134919" duration="4000" />
+      <workItem from="1602689215247" duration="1473000" />
+      <workItem from="1602760524440" duration="663000" />
+      <workItem from="1602835115631" duration="2658000" />
+      <workItem from="1602876262865" duration="65000" />
+      <workItem from="1608805203357" duration="12000" />
+      <workItem from="1608975626446" duration="10000" />
+      <workItem from="1609887557315" duration="309000" />
+      <workItem from="1609958902210" duration="602000" />
+      <workItem from="1610292029402" duration="46000" />
+      <workItem from="1610789541646" duration="1196000" />
+      <workItem from="1610801538175" duration="380000" />
     </task>
     <task id="LOCAL−00001" summary="Implemented Wilma Authentication for Wilma Cards&#10;Implemented Card clicking">
       <created>1585928167425</created>
@@ -232,7 +248,20 @@
       <option name="presentableId" value="LOCAL−00009" />
       <updated>1602516631149</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL−00010" summary="Added baseurl fix">
+      <created>1602517558682</created>
+      <option name="number" value="LOCAL−00010" />
+      <option name="presentableId" value="LOCAL−00010" />
+      <updated>1602517558682</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Fixed issues because of new edison update">
+      <created>1610790370141</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1610790370141</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,42 +284,10 @@
     <MESSAGE value="Started integrating login via mobile app using WebSockets" />
     <MESSAGE value="Login via your phone is done, after hard work, end result is phenomenal!" />
     <MESSAGE value="Added logout confirmation, bumped up version and turned debug off" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added logout confirmation, bumped up version and turned debug off" />
+    <MESSAGE value="Added baseurl fix" />
+    <MESSAGE value="Fixed issues because of new edison update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed issues because of new edison update" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="0" y="0" width="1910" height="1038" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602505426327">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="0" y="0" width="1910" height="1038" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602505426327" />
-    <state x="321" y="50" width="1268" height="938" key="CommitChangelistDialog2" timestamp="1602516631104">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="321" y="50" width="1268" height="938" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602516631104" />
-    <state width="1878" height="275" key="GridCell.Tab.0.bottom" timestamp="1602503468982">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1878" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602503468982" />
-    <state width="1878" height="275" key="GridCell.Tab.0.center" timestamp="1602503468982">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1878" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602503468982" />
-    <state width="1878" height="275" key="GridCell.Tab.0.left" timestamp="1602503468982">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1878" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602503468982" />
-    <state width="1878" height="275" key="GridCell.Tab.0.right" timestamp="1602503468982">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1878" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602503468982" />
-    <state x="555" y="256" width="800" height="526" key="Vcs.Push.Dialog.v2" timestamp="1602516632261">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="555" y="256" width="800" height="526" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602516632261" />
-    <state x="624" y="237" key="run.anything.popup" timestamp="1602515201978">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="624" y="237" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602515201978" />
   </component>
 </project>

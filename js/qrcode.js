@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 EdisonWeb.
+ * Copyright (c) 2021 EdisonWeb.
  * @author Developer From Jokela
  */
 
@@ -853,7 +853,7 @@ var QRCode;
                 var el = document.createElement("img");
                 el.style.objectFit = "cover";
                 el.style.width = "100%";
-                el.style.maxHeight = "450px";
+                el.style.maxHeight = "300px";
                 var fOnError = function () {
                     self._bSupportDataURI = false;
 
@@ -903,7 +903,7 @@ var QRCode;
             this._elImage = document.createElement("img");
             this._elImage.style.objectFit = "cover";
             this._elImage.style.width = "100%";
-            this._elImage.style.maxHeight = "450px";
+            this._elImage.style.maxHeight = "350px";
             this._elImage.alt = "Scan me!";
             this._elImage.style.display = "none";
             this._el.appendChild(this._elImage);
