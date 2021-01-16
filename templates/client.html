@@ -76,7 +76,7 @@
                                           style="text-overflow: clip; overflow: hidden; word-break: break-word;">{{getCard(card).translated_title}}</span>
                                 </md-card-content>
                                 <div flex=""></div>
-                                <div style="height: 6px; border-radius: 0 0 4px 4px; background-color: {{ edisonColorToCode(getCard(card).category.color || 'grey') }}"></div>
+                                <div style="height: 6px; border-radius: 0 0 4px 4px; background-color: {{ edisonColorToCode(getCard(card).color || 'grey') }}"></div>
                             </md-card>
                             <md-card class="grid-element" md-ink-ripple
                                      ng-click="openCardSelector(page)"
@@ -128,7 +128,7 @@
                                           style="text-overflow: clip; overflow: hidden; word-break: break-word;">{{card.translated_title}}</span>
                                 </md-card-content>
                                 <div flex=""></div>
-                                <div style="height: 6px; border-radius: 0 0 4px 4px; background-color: {{ edisonColorToCode(category.color || 'grey') }}"></div>
+                                <div style="height: 6px; border-radius: 0 0 4px 4px; background-color: {{ edisonColorToCode(card.color || 'grey') }}"></div>
                             </md-card>
                         </div>
                     </div>
@@ -153,7 +153,7 @@
                                           style="text-overflow: clip; overflow: hidden; word-break: break-word;">{{card.translated_title}}</span>
                                 </md-card-content>
                                 <div flex=""></div>
-                                <div style="height: 6px; border-radius: 0 0 4px 4px; background-color: {{ edisonColorToCode(category.color || 'grey') }}"></div>
+                                <div style="height: 6px; border-radius: 0 0 4px 4px; background-color: {{ edisonColorToCode(card.color || 'grey') }}"></div>
                             </md-card>
                         </div>
                     </div>
