@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 EdisonWeb.
+ * Copyright (c) 2021 EdisonWeb.
  * @author Developer From Jokela
  */
 
@@ -47,5 +47,10 @@ var en_lang = {
     "login_failed_mobile": "Sign-in via phone failed",
     "login_failed_mobile_msg": "Your phone seems to been signed out of Edison. Please try logging in to your phone and try again.",
     "logout_title": "Sign out?",
-    "logout_msg": "Are you sure?"
+    "logout_msg": "Are you sure?",
+    "signing_in": "Signing in to Wilma",
+    "wilmaclient_title": "Wilma Detected",
+    "wilmaclient_msg": "Edison detected, that this page is Wilma. Edison has more user-friendly and feature-rich inteface for Wilma. Do you want to switch to Edison's Wilma Client?",
+    "open_wilma": "Open Wilma",
+    "no_thanks": "No, Thank you"
 };

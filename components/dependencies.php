@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (c) 2020 EdisonWeb.
+ * Copyright (c) 2021 EdisonWeb.
  * @author Developer From Jokela
  */
 
@@ -119,6 +119,11 @@ define("FOOTER_DEPENDENCIES", array(
         "type" => "js",
         "minifyAvailable" => false,
         "local" => "main.js",
+    ),
+    array(
+        "type" => "js",
+        "minifyAvailable" => false,
+        "local" => "wilmaclient.js",
     )
 ));
 

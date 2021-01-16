@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 EdisonWeb.
+ * Copyright (c) 2021 EdisonWeb.
  * @author Developer From Jokela
  */
 
@@ -47,7 +47,11 @@ var fi_lang = {
     "login_failed_mobile": "Kirjautuminen puhelimen kautta epäonnistui",
     "login_failed_mobile_msg": "Puhelimesi vaikuttaa olevan kirjautunut ulos Edisonista. Kokeile kirjauta uudelleen ja yritä uudelleen.",
     "logout_title": "Kirjaudu ulos?",
-    "logout_msg": "Oletko varma?"
+    "logout_msg": "Oletko varma?",
+    "wilmaclient_title": "Wilma Tunnistettu",
+    "wilmaclient_msg": "Edison tunnisti tämän sivun olevan Wilma. Edison tarjoaa käyttäjäystävällisemmän ja ominaisuusrikkaan käyttöliittymän Wilmalle. Haluatko siirtyä siihen?",
+    "open_wilma": "Avaa Wilma",
+    "no_thanks": "Ei kiitos"
 
 
 };

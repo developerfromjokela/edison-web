@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2020 EdisonWeb.
+ * Copyright (c) 2021 EdisonWeb.
  * @author Developer From Jokela
  */
 
-var version = "1.0.5-alpha";
+var version = "1.0.6-alpha";
 var rpcURl = "wss://developerfromjokela.com/edisonrpc/";
 var debug = false;
 
@@ -105,16 +105,16 @@ function PageActionsController($scope, $mdDialog, $translate, $http, page, refre
 // updated to reflect this
 angular.lowercase = lowercase;
 
-angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCache', 'ngRoute', 'pascalprecht.translate'])
+var app = angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCache', 'ngRoute', 'pascalprecht.translate'])
     .config(function ($mdThemingProvider, $routeProvider, $locationProvider, $provide, $translateProvider, $mdIconProvider) {
         $locationProvider.html5Mode(true);
         $locationProvider.hashPrefix('');
         $mdIconProvider.fontSet('md', 'material-icons');
 
 
-        $translateProvider.translations('fi',fi_lang);
+        $translateProvider.translations('fi', fi_lang);
 
-        $translateProvider.translations('en',en_lang);
+        $translateProvider.translations('en', en_lang);
 
         $translateProvider.preferredLanguage(getData(dataEntries.language) || 'fi');
 
@@ -560,13 +560,33 @@ angular.module('EdisonWeb', ['ngMaterial', 'ngMessages', 'material.svgAssetsCach
         var cardURL = card.url;
         if (cardURL.includes("/sso/wilma/login")) {
             cardURL = edisonURL + cardURL;
-            progressDialog($mdDialog, $translate.instant('logging_wilma'), $translate.instant('please_wait'), true);
-            get_request(baseURL + "api/v1/desktop/wilma?sso_url=" + cardURL, $http, $translate, $mdDialog, function (response) {
-                $mdDialog.hide();
-                window.open(response['sso'], "_blank");
-            }, function (response) {
-                $mdDialog.hide();
-            });
+
+            function signInToWilma() {
+                progressDialog($mdDialog, $translate.instant('logging_wilma'), $translate.instant('please_wait'), true);
+                get_request(baseURL + "api/v1/desktop/wilma?sso_url=" + cardURL, $http, $translate, $mdDialog, function (response) {
+                    $mdDialog.hide();
+                    window.open(response['sso'], "_blank");
+                }, function (response) {
+                    $mdDialog.hide();
+                });
+            }
+
+            if (debug) {
+                var wilmaClientConfirm = $mdDialog.confirm()
+                    .title($translate.instant('wilmaclient_title'))
+                    .textContent($translate.instant('wilmaclient_msg'))
+                    .ok($translate.instant('open_wilma'))
+                    .cancel($translate.instant('no_thanks'));
+
+                $mdDialog.show(wilmaClientConfirm).then(function () {
+                    $location.path('wilmaclient')
+                }, function () {
+                    signInToWilma();
+                });
+            } else {
+                signInToWilma();
+            }
+
         } else
             window.open(cardURL, "_blank");
     };

@@ -5,6 +5,7 @@
     <base href="<?php echo BASEURL ?>">
     <script>
         var baseURL = "<?php echo BASEURL?>";
+        var wilmaClientBaseURL = "<?php echo BASEURL . 'wilmaclient/'?>";
         var edisonURL = "<?php echo EDISON_BASEPATH ?>";
         var serverYear = "<?php echo date("Y")?>";
     </script>

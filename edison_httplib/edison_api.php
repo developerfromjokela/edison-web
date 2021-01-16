@@ -1,6 +1,6 @@
 <?php
-/**
- * Copyright (c) 2020 EdisonWeb.
+/*
+ * Copyright (c) 2021 EdisonWeb.
  * @author Developer From Jokela
  */
 
@@ -163,7 +163,7 @@ class EdisonApi
     private function getSessionJar()
     {
         return CookieJar::fromArray([
-            'appsid' => $this->session
+            'sessionid' => $this->session
         ], "app.edison.fi");
     }
 
@@ -174,7 +174,7 @@ class EdisonApi
     private function getPostSessionJar($csrfToken)
     {
         return CookieJar::fromArray([
-            'appsid' => $this->session,
+            'sessionid' => $this->session,
             'csrftoken' => $csrfToken['csrf']
         ], "app.edison.fi");
     }

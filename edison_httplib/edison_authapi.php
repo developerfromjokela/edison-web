@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (c) 2020 EdisonWeb.
+ * Copyright (c) 2021 EdisonWeb.
  * @author Developer From Jokela
  */
 
@@ -76,7 +76,7 @@ class EdisonAuthApi
      */
     private function getSessionJar($sessionId) {
         return CookieJar::fromArray([
-            'appsid' => $sessionId
+            'sessionid' => $sessionId
         ], "app.edison.fi");
     }
 
