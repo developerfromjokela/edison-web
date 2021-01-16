@@ -31,7 +31,7 @@ var en_lang = {
     "not_implemented_yet": "Not implemented yet",
     "not_implemented_yet_msg": "This feature or functionality is not ready yet",
     "add_page": "Add new page",
-    "add_page_msg": "New page will be separate desktop from the main. Note that multipage functionality is not working in the offical client",
+    "add_page_msg": "New page will be separate desktop from the main.",
     "page_placeholder": "🤔",
     "adding_page": "Adding new page",
     "delete": "Delete",

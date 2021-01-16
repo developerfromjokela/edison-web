@@ -31,7 +31,7 @@ var fi_lang = {
     "not_implemented_yet": "Ei vielä valmis",
     "not_implemented_yet_msg": "Tämä ominaisuus tai toiminto on toistaiseksi työstön alla",
     "add_page": "Lisää uusi työpöytä",
-    "add_page_msg": "Uusi työpöytä tulee olemaan erillinen työpöytä kaikista muista. Huomio: Virallinen Edison ei tue monityöpöytää",
+    "add_page_msg": "Uusi työpöytä tulee olemaan erillinen työpöytä kaikista muista.",
     "page_placeholder": "🤔",
     "adding_page": "Lisätään uusi työpöytä",
     "delete": "Poista",
